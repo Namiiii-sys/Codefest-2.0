@@ -63,7 +63,7 @@ export default function EventsCarousel({
             </button>
 
             {/* cards */}
-            <div className="relative h-[550px] md:h-[500px]">
+            <div className="relative h-[550px] sm:h-[480px] md:h-[500px]">
               {events.map((event, i) => {
                 const isMiddle = i === current;
                 const isLeft = i === mod(current - 1, events.length);
@@ -71,20 +71,30 @@ export default function EventsCarousel({
 
                 let style;
 
+                const isMobile =
+                  typeof window !== "undefined" && window.innerWidth < 768;
+
+                const sideScale = isMobile ? 0.6 : 0.9;   // 🔥 smaller only on mobile
+                const farScale = isMobile ? 0.5 : 0.85;
+                const leftPos = isMobile ? "5%" : "10%";
+                const rightPos = isMobile ? "100%" : "90%";
+                const yPos = isMobile ? "75%" : "55%";
+
                 if (isMiddle)
                   style = { x: "50%", y: "0%", s: 1.1, z: 30, o: 1 };
                 else if (isLeft)
-                  style = { x: "10%", y: "55%", s: 0.9, z: 20, o: 0.9 };
+                  style = { x: leftPos, y: yPos, s: sideScale, z: 20, o: 0.9 };
                 else if (isRight)
-                  style = { x: "90%", y: "55%", s: 0.9, z: 20, o: 0.9 };
+                  style = { x: rightPos, y: yPos, s: sideScale, z: 20, o: 0.9 };
                 else
-                  style = { x: "85%", y: "55%", s: 0.85, z: 5, o: 0 };
+                  style = { x: rightPos, y: yPos, s: farScale, z: 5, o: 0 };
+
 
                 return (
                   <div
                     key={i}
                     onClick={() => setSelected(event)}   // 🔥 open modal
-                    className="absolute w-64 md:w-72 cursor-pointer"
+                    className="absolute w-64 sm:w-56 md:w-72 cursor-pointer"
                     style={{
                       left: style.x,
                       top: style.y,
