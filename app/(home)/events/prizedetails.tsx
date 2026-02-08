@@ -113,7 +113,7 @@ function PrizeCard({ p }: { p: Prize }) {
           className="
             h-24 w-24 rounded-full
             bg-black
-            border border-yellow-400/60
+            border-2 border-yellow-400
             flex items-center justify-center
             shadow-[0_12px_30px_rgba(0,0,0,0.6)]
           "
@@ -199,7 +199,7 @@ function PrizeSection({
 
 export default function PrizesSection() {
   return (
-    <section className="bg-black py-28 px-6">
+    <section className="bg-black py-28 px-6" id="prizes">
       <div className="mx-auto max-w-6xl">
 
         {/* PAGE HEADER */}

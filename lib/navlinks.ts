@@ -34,8 +34,26 @@ export const navlinks: NavLink[] = [
     },
     {
         id: 5,
+        name: "Prizes",
+        link: "/events/#prizes",
+        icon:Contact
+    },
+    {
+        id: 6,
+        name: "Sponsors",
+        link: "/#sponsors",
+        icon:Contact
+    },
+    {
+        id: 7,
         name: "Team",
         link: "/#team",
+        icon:Contact
+    },
+    {
+        id: 8,
+        name: "Contact",
+        link: "/#contact",
         icon:Contact
     },
   

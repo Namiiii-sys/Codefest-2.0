@@ -1,15 +1,29 @@
 "use client";
 
-import { div } from "framer-motion/client";
-import React from "react";
-
+import { motion } from "framer-motion";
+import { Variants } from "framer-motion";
 type Sponsor = {
   src: string;
   alt: string;
 };
 
+const fadeUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1], // ✅ easeOut curve
+    },
+  },
+};
+
 const Card = ({ s }: { s: Sponsor }) => (
-  <div className="relative w-fit">
+  <div className="relative w-fit" id="sponsors">
       <span className="absolute -top-1 -right-1 h-[5px] w-1/2 bg-yellow-500 rounded-full" />
     <span className="absolute -top-1 -right-1 w-[5px] h-1/2 bg-yellow-500 rounded-full" />
 
@@ -123,18 +137,24 @@ export default function SponsorsSection() {
   }));
 
   return (
+
     <section className="bg-black py-20 px-6">
       <div className="mx-auto  max-w-7xl">
         {/* Vertical (7) */}
-        <div className="flex place-items-center flex-col gap-10">
-          {verticalSponsors.map((item) => (
-           <div key={item.heading} className="w-full flex flex-col items-center">
+    <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  transition={{ staggerChildren: 0.15 }}     className="flex place-items-center flex-col gap-10"
+>
+  {verticalSponsors.map((item) => (
+    <motion.div key={item.heading} variants={fadeUp}>
+      <SectionTitle text={item.heading} />
+      <Card s={item.sponsor} />
+    </motion.div>
+  ))}
+</motion.div>
 
-              <SectionTitle text={item.heading} />
-              <Card s={item.sponsor} />
-            </div>
-          ))}
-        </div>
 
         {/* Two in a row */}
         <div className="mt-16">

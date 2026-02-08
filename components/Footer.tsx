@@ -19,7 +19,7 @@ const cinzel = Cinzel({
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white" id="ending">
+    <footer className="bg-black text-white" id="contact">
       <hr className="border-yellow-600/50" />
 
       <div className="px-6 py-16 bg-slate-950 text-white">

@@ -100,7 +100,7 @@ export default function TeamFloatingSection() {
 
       if (!inView) return;
 
-      const delta = e.deltaY * 0.12;
+      const delta = e.deltaY * 0.02;
 
       // if at ends, let normal scroll happen
       if ((delta > 0 && progressRef.current >= 100) || (delta < 0 && progressRef.current <= 0)) {
@@ -143,7 +143,7 @@ export default function TeamFloatingSection() {
   }, [isMobile]);
 
   return (
-    <section ref={sectionRef} className="min-h-screen bg-black py-24 relative overflow-hidden">
+    <section ref={sectionRef} className="min-h-screen bg-black py-24 relative overflow-hidden" id="team">
       <h2 className="text-center text-4xl font-bold text-white mb-20">Meet the Team</h2>
 
       <div className="relative h-[520px] overflow-hidden">
@@ -156,11 +156,12 @@ export default function TeamFloatingSection() {
         >
           <defs>
             <linearGradient id="rope3d" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#1b1107" />
-              <stop offset="35%" stopColor="#5b3a12" />
-              <stop offset="50%" stopColor="#e7c58d" />
-              <stop offset="65%" stopColor="#5b3a12" />
-              <stop offset="100%" stopColor="#1b1107" />
+           <stop offset="0%" stopColor="#fde68a" />  {/* yellow-300 */}
+<stop offset="35%" stopColor="#facc15" /> {/* yellow-400 */}
+<stop offset="50%" stopColor="#eab308" /> {/* yellow-500 (bright core) */}
+<stop offset="65%" stopColor="#facc15" /> {/* yellow-400 */}
+<stop offset="100%" stopColor="#fde68a" />{/* yellow-300 */}
+
             </linearGradient>
 
             <filter id="ropeShadow" x="-50%" y="-50%" width="200%" height="200%">

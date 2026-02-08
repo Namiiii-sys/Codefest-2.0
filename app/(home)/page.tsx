@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Hero from "./components/hero";
 import TempleRopeTimeline from "./components/timeline";
 import AboutSection from "./components/about";
@@ -11,28 +11,16 @@ import MoreSponsors from "./events/moresponsors";
 
 export default function Home() {
   return (
-    <main className="relative w-full overflow-hidden bg-black">
-      
-      {/* Background Image */}
-      {/* <div className="fixed inset-0 h-screen -z-10">
-        <video
-          src="/temp.mp4"
-          autoPlay
-          muted
-          className="object-cover h-screen w-full"
-        />
-                <div className="absolute inset-0 bg-black/80" />
-      </div> */}
-
-      <Hero />
-      <TempleRopeTimeline />
-      <AboutSection />
-      <PrizesSection/>
-      <SponsorsSection />
-      <MoreSponsors/>
-      <MeetTheTeam/>
-      <Mentors/>
-      <FAQ/>
-    </main>
+      <main className="relative w-full bg-black">
+        <Hero />
+        <TempleRopeTimeline />
+        <AboutSection />
+        <PrizesSection />
+        <SponsorsSection />
+        <MoreSponsors />
+        <MeetTheTeam />
+        <Mentors />
+        <FAQ />
+      </main>
   );
 }
