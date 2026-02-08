@@ -227,7 +227,7 @@ export default function TeamFloatingSection() {
 
           return (
             <div
-              key={member.name}
+              key={index}
               className="absolute ease-out"
               style={{
                 left: `${xPercent}%`,

@@ -3,6 +3,7 @@
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 
+
 export function TimelineDemo() {
   const data = [
     {
@@ -10,29 +11,59 @@ export function TimelineDemo() {
       content: (
         <div className="space-y-8">
           <EventBlock
-            title="Web Auction"
-            short="Strategy Driven Web Development Challenge"
+            title="Registration & Check-in"
+            time="08:45 AM – 09:30 AM"
+            short="Participant verification and kit distribution"
+            long="Entry formalities, ID verification, and welcome kits handed out."
+          />
+
+          <EventBlock
+            title="Opening Briefing"
+            time="09:30 AM – 09:45 AM"
+            short="Event overview & rules"
+            long="Walkthrough of schedule, competition rules, judging criteria, and flow of the day."
+          />
+
+          <EventBlock
+            title="Web Auction – Auction Phase"
             time="10:00 AM – 10:45 AM"
-            long="Participants may register individually or in teams. Early registration is encouraged as slots are limited. Teams must ensure that all submitted information is accurate to avoid issues during verification."
+            short="Live bidding for tech resources"
+            long="Teams strategically bid for tools, APIs, and constraints before development begins."
           />
-           <EventBlock
+
+          <EventBlock
+            title="Web Auction – Build Phase"
+            time="10:45 AM – 12:45 PM"
+            short="Development sprint"
+            long="Teams develop websites using the auctioned assets."
+          />
+
+          <EventBlock
             title="Design Apocalypse"
-            time="01:00 PM – 02:30 PM "
-            short="Time Bound UI/UX Design Sprint"
-            long="Curated problem statements focusing on real-world challenges will be released to all registered teams. These problems are designed to evaluate innovation, scalability, and technical depth."
+            time="01:00 PM – 02:30 PM"
+            short="Time-bound UI/UX sprint"
+            long="Rapid design challenge focused on usability, creativity, and execution."
           />
+
           <EventBlock
             title="Blind Code"
-            time="02:45 PM – 04:15 PM "
-            short="Logic Based Coding Without Test Case Visibility"
-            long="All teams must complete their registrations before the deadline. Late entries will not be considered under any circumstances to maintain fairness and event discipline."
+            time="02:45 PM – 04:15 PM"
+            short="Logic-first coding challenge"
+            long="Solve algorithmic problems without seeing test cases."
           />
-         
+
           <EventBlock
-          time = "04:30 PM – 06:00 PM"
             title="Code Phantom"
-            short="Data Structures and Algorithmin Problem Solving"
-            long="Teams begin working on their solutions. Participants are expected to follow all event rules, collaborate ethically, and maintain proper documentation throughout the development phase."
+            time="04:30 PM – 06:00 PM"
+            short="DSA competition"
+            long="Efficiency-driven coding and deep problem-solving rounds."
+          />
+
+          <EventBlock
+            title="Day 1 Closing"
+            time="06:00 PM – 06:15 PM"
+            short="Hackathon briefing"
+            long="Instructions, reporting time, and preparation guidelines for Day 2 hackathon."
           />
         </div>
       ),
@@ -42,16 +73,87 @@ export function TimelineDemo() {
       content: (
         <div className="space-y-8">
           <EventBlock
-          time="08:30 AM – 09:30 AM"
-            title="National Hackathon"
-            short="12 Hour Offline Hackathon"
-            long={"Real World Problem Statements\nMentoring Rounds & Evaluation\nShortlisting & Final Presentation"}
+            title="Breakfast & Check-in"
+            time="08:30 AM – 09:30 AM"
+            short="Arrival & refreshment"
+            long="Participants settle in and prepare for the hackathon start."
           />
+
           <EventBlock
-          time = "07:15 PM – 08:30 PM "
-            title="Results & Awards"
-            short="Winners announced and celebrated"
-            long="Top-performing teams will be announced after evaluation by the judging panel. Awards, certificates, and recognitions will be distributed to celebrate innovation and excellence."
+            title="Hackathon Kick-off"
+            time="09:30 AM"
+            short="Official start"
+            long="Problem statements revealed and development begins."
+          />
+
+          <EventBlock
+            title="Build Phase 1"
+            time="10:00 AM – 12:00 PM"
+            short="Core development window"
+            long="Focused implementation of project fundamentals."
+          />
+
+          <EventBlock
+            title="Mentoring Round 1"
+            time="12:00 PM – 01:00 PM"
+            short="Idea validation & feedback"
+            long="Mentors guide feasibility, scope, and improvements."
+          />
+
+          <EventBlock
+            title="Lunch Break"
+            time="01:00 PM – 01:45 PM"
+            short="Rest & recharge"
+            long="Participants take a short break before the final sprint."
+          />
+
+          <EventBlock
+            title="Build Phase 2"
+            time="01:45 PM – 04:00 PM"
+            short="Major development window"
+            long="Feature completion and testing phase."
+          />
+
+          <EventBlock
+            title="Final Mentoring Round"
+            time="04:00 PM – 05:00 PM"
+            short="Optimization & pitch guidance"
+            long="Final polishing, debugging, and presentation strategy."
+          />
+
+          <EventBlock
+            title="Tea Break & Shortlisting"
+            time="05:00 PM – 05:30 PM"
+            short="Top 10 teams announced"
+            long="Refreshments served and finalists shortlisted."
+          />
+
+          <EventBlock
+            title="Final Build & Submission"
+            time="05:30 PM – 07:00 PM"
+            short="Last refinement sprint"
+            long="Shortlisted teams finalize and submit projects."
+          />
+
+          <EventBlock
+            title="Final Submission Deadline"
+            time="07:00 PM"
+            short="Submissions close"
+            long="All code and deliverables must be submitted."
+          />
+
+          <EventBlock
+            title="Judging & Presentations"
+            time="07:15 PM – 08:30 PM"
+            short="Top teams demo"
+            long="Live demonstrations and evaluation by judges."
+          />
+
+          <EventBlock
+            title="Closing Ceremony"
+            time="08:30 PM – 09:00 PM"
+            short="Awards & results"
+            long="Winners announced, prizes distributed, vote of thanks."
           />
         </div>
       ),
@@ -68,6 +170,7 @@ export function TimelineDemo() {
     </div>
   );
 }
+
 
 function EventBlock({
   title,

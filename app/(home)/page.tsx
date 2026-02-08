@@ -7,6 +7,7 @@ import PrizesSection from "./components/prizes";
 import MeetTheTeam from "./components/team";
 import Mentors from "./components/mentors";
 import FAQ from "./components/faq";
+import MoreSponsors from "./events/moresponsors";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       <AboutSection />
       <PrizesSection/>
       <SponsorsSection />
+      <MoreSponsors/>
       <MeetTheTeam/>
       <Mentors/>
       <FAQ/>

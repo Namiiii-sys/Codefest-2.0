@@ -46,7 +46,7 @@ export default function HackathonDetails() {
           <h2 className="text-4xl md:text-5xl font-bold text-yellow-400 tracking-widest">
             Hackathon Details
           </h2>
-          <p className="text-white/60 mt-4 max-w-2xl mx-auto">
+          <p className="text-white mt-4 max-w-2xl mx-auto">
             Build fast. Think deep. Ship real.  
             A focused 12-hour sprint designed to turn ideas into working products.
           </p>
@@ -58,7 +58,7 @@ export default function HackathonDetails() {
           {/* ========= LEFT : OVERVIEW ========= */}
           <div className="space-y-8">
 
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+            <div className=" border-t border-t-gray-500 rounded-2xl p-8">
               <h3 className="text-xl font-semibold text-yellow-400 mb-6">
                 Format
               </h3>
@@ -73,7 +73,7 @@ export default function HackathonDetails() {
               </ul>
             </div>
 
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+            <div className="border-t border-t-gray-500 rounded-2xl p-8">
               <h3 className="text-xl font-semibold text-yellow-400 mb-4">
                 Team Size
               </h3>
@@ -82,7 +82,7 @@ export default function HackathonDetails() {
               </p>
             </div>
 
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+            <div className="border-t border-t-gray-500 rounded-2xl p-8">
               <h3 className="text-xl font-semibold text-yellow-400 mb-4">
                 Judging Criteria
               </h3>
@@ -108,7 +108,7 @@ export default function HackathonDetails() {
                   key={i}
                   className="
                     group flex gap-5 items-start
-                    bg-white/5 border border-white/10
+                  
                     rounded-2xl p-6
                     hover:border-yellow-400/60
                     transition-all
@@ -131,7 +131,7 @@ export default function HackathonDetails() {
             })}
 
             {/* Prize */}
-            <div className="mt-10 bg-gradient-to-r from-yellow-500/10 to-yellow-700/10 border border-yellow-500/40 rounded-2xl p-8 text-center">
+            <div className="mt-10 border-t border-t-gray-500 rounded-2xl p-8 text-center">
               <Trophy className="mx-auto text-yellow-400 mb-4" size={32} />
               <p className="text-lg font-semibold text-yellow-400">
                 Prizes • Certificates • Recognition

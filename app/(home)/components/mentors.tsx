@@ -123,8 +123,8 @@ export default function Mentors() {
 
         {/* Row 2 - 2 cards centered */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8  mx-auto">
-          {team.slice(3).map((member) => (
-            <TeamCard key={member.name} member={member} />
+          {team.slice(3).map((member, index) => (
+            <TeamCard key={index} member={member} />
           ))}
         </div>
       </div>

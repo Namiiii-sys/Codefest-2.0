@@ -1,7 +1,30 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 export default function PrizesSection() {
-  const totalPrize = 120000; // 50k + 35k + 20k + 5k + 5k + 5k
+  const totalPrize = 120000;
+  const duration = 1500; // animation duration in ms
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start: number | null = null;
+
+    const animate = (timestamp: number) => {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+
+      const percentage = Math.min(progress / duration, 1);
+      setCount(Math.floor(percentage * totalPrize));
+
+      if (progress < duration) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, []);
 
   return (
     <section className="bg-black py-24 px-6 text-white text-center">
@@ -14,7 +37,7 @@ export default function PrizesSection() {
 
         {/* Big number (hero focus) */}
         <h2 className="text-5xl md:text-7xl font-extrabold text-yellow-400 tracking-wide">
-          ₹ {totalPrize.toLocaleString()}
+          ₹ {count.toLocaleString()}
         </h2>
 
         {/* Subtitle */}

@@ -5,9 +5,9 @@ import PrizeDetails from "./prizedetails";
 function page() {
   return (
     <>
-    <HackathonDetails/>
+    
 <TimelineDemo/>
-<MoreSponsors/>
+<HackathonDetails/>
  </>
   )
 }
