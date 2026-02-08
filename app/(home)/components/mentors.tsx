@@ -102,7 +102,7 @@ function TeamCard({ member }: { member: TeamMember }) {
 
 export default function Mentors() {
   return (
-    <section className="bg-black py-20 px-30 ">
+    <section className="bg-black py-20 px-10 ">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-14">
