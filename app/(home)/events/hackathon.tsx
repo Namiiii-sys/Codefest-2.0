@@ -44,7 +44,7 @@ export default function HackathonDetails() {
         {/* ================= HEADING ================= */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-yellow-400 tracking-widest">
-            Hackathon Details
+            The Set Forth
           </h2>
           <p className="text-white mt-4 max-w-2xl mx-auto">
             Build fast. Think deep. Ship real.  

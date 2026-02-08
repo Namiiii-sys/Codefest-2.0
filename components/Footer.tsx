@@ -24,7 +24,7 @@ export default function Footer() {
 
       <div className="px-6 py-16 bg-slate-950 text-white">
 
-        <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-5 gap-12 items-stretch">
+        <div className=" mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-5 gap-12 items-stretch">
 
           {/* LEFT SIDE (Logo + Contact + Follow) */}
           <div className="md:col-span-2 flex flex-col justify-center space-y-8">
@@ -47,16 +47,16 @@ export default function Footer() {
                 Contact
               </h3>
 
-              <div className="flex justify-center flex-wrap gap-x-6 gap-y-2">
+              <div className="flex justify-center md:justify-start flex-wrap gap-x-6 pt-6 gap-y-2">
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center  gap-2">
                   <Phone className="w-4 h-4 text-yellow-400" />
                   <Link href="tel:+918178281265" className="text-sm hover:text-yellow-400">
                     +91 8178281265
                   </Link>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center  gap-2">
                   <Phone className="w-4 h-4 text-yellow-400" />
                   <Link href="tel:+919999999999" className="text-sm hover:text-yellow-400">
                     +91 99999 99999

@@ -1,87 +1,251 @@
 "use client";
 
-type PrizeItem = {
+import React from "react";
+
+type Prize = {
   title: string;
-  prize: string;
-  note?: string;
+  amount: string;
+  subtitle: string;
+  desc: string;
+  iconSrc: string;
+  iconAlt: string;
 };
 
-/* =========================================
-   DATA (easy to maintain / scalable)
-========================================= */
-
-const prizes: PrizeItem[] = [
-  { title: "First Place", prize: "₹50,000" },
-  { title: "Second Place", prize: "₹35,000" },
-  { title: "Third Place", prize: "₹20,000" },
-
-  { title: "Best Beginner Team", prize: "₹5,000", note: "Swags & goodies" },
-  { title: "Best Girls Team", prize: "₹5,000", note: "Swags & goodies" },
-  { title: "Best Use of GenAI", prize: "₹5,000", note: "Swags & goodies" },
+const mainPrizes: Prize[] = [
+  {
+    title: "FIRST PLACE",
+    amount: "₹50,000",
+    subtitle: "National Hackathon Winner",
+    desc: "",
+    iconSrc: "/first.png",
+    iconAlt: "First place",
+  },
+  {
+    title: "SECOND PLACE",
+    amount: "₹30,000",
+    subtitle: "First Runner-up",
+    desc: "",
+    iconSrc: "/second.png",
+    iconAlt: "Second place",
+  },
+  {
+    title: "THIRD PLACE",
+    amount: "₹15,000",
+    subtitle: "Second Runner-up",
+    desc: "",
+    iconSrc: "/third.png",
+    iconAlt: "Third place",
+  },
 ];
 
-/* =========================================
-   CALCULATE TOTAL (automatic)
-========================================= */
+const eventPrizes: Prize[] = [
+  {
+    title: "1st Prize",
+    amount: "₹3,000",
+    subtitle: "Per event",
+    desc: "Web Auction • Design Apocalypse • Blind Code • Code Phantom",
+    iconSrc: "/first.png",
+    iconAlt: "Event first",
+  },
+  {
+    title: "2nd Prize",
+    amount: "₹1,500",
+    subtitle: "Per event",
+    desc: "Web Auction • Design Apocalypse • Blind Code • Code Phantom",
+    iconSrc: "/second.png",
+    iconAlt: "Event second",
+  },
+  {
+    title: "3rd Prize",
+    amount: "₹500",
+    subtitle: "Per event",
+    desc: "Web Auction • Design Apocalypse • Blind Code • Code Phantom",
+    iconSrc: "/third.png",
+    iconAlt: "Event third",
+  },
+];
 
-const totalPrize = prizes.reduce((sum, p) => {
-  const value = Number(p.prize.replace(/[₹,]/g, ""));
-  return sum + value;
-}, 0);
+const specialPrizes: Prize[] = [
+  {
+    title: "Best Beginner Team",
+    amount: "₹2,000",
+    subtitle: "Special Recognition Award",
+    desc: "+ Swags & Goodies",
+    iconSrc: "/beginner.png",
+    iconAlt: "Best beginner",
+  },
+  {
+    title: "Best Girls Team",
+    amount: "₹2,000",
+    subtitle: "Special Recognition Award",
+    desc: "+ Swags & Goodies",
+    iconSrc: "/girl.png",
+    iconAlt: "Best girls team",
+  },  {
+    title: "Best Use of GenAI",
+    amount: "",
+    subtitle: "Cash Prize of INR 5,000",
+    desc: "+ Swags and Goodies",
+    iconSrc: "/genai.png",
+    iconAlt: "Best use of GenAI",
+  },
+];
 
-/* =========================================
-   COMPONENT
-========================================= */
 
-export default function PrizeDetails() {
+function PrizeCard({ p }: { p: Prize }) {
   return (
-    <section className="bg-black text-white py-20 px-6 border-t border-white/10">
-      <div className="max-w-6xl mx-auto">
-
-        {/* ================= HEADER ================= */}
-        <div className="text-center mb-16">
-          <p className="text-yellow-500 tracking-widest uppercase font-semibold">
-            Prize Pool of Hackathon
-          </p>
-
-          <h2 className="mt-4 text-5xl md:text-6xl font-extrabold text-yellow-400">
-            ₹ {totalPrize.toLocaleString()}
-          </h2>
-
-          <p className="mt-3 text-white/60">
-            Cash rewards across winners and special categories
-          </p>
+    <div
+      className="
+        group relative
+        w-80 h-[22rem]
+        bg-black/70 backdrop-blur
+        border-t border-gray-700 border-t-gray-500 border-l  border-r
+        rounded-xl place-content-center
+        px-8 pt-16 pb-10
+        shadow-[0_20px_60px_rgba(0,0,0,0.6)]
+        transition-all duration-300
+        hover:-translate-y-2
+      "
+    >
+      {/* Icon */}
+      <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
+        <div
+          className="
+            h-24 w-24 rounded-full
+            bg-black
+            border border-yellow-400/60
+            flex items-center justify-center
+            shadow-[0_12px_30px_rgba(0,0,0,0.6)]
+          "
+        >
+          <img
+            src={p.iconSrc}
+            alt={p.iconAlt}
+            className="
+              h-12 w-12 select-none
+              transition-transform
+              group-hover:animate-bounce
+              [animation-duration:0.6s]
+            "
+            draggable={false}
+          />
         </div>
+      </div>
 
-        {/* ================= BREAKDOWN ================= */}
-        <div className="grid md:grid-cols-2 gap-6">
+      {/* Content */}
+      <div className="flex flex-col items-center text-center">
+        {p.amount ? (
+          <div className="text-yellow-400 font-extrabold text-3xl md:text-4xl tracking-wide">
+            {p.amount}
+          </div>
+        ) : (
+          <div className="text-white font-extrabold text-2xl leading-tight">
+            {p.title}
+          </div>
+        )}
 
-          {prizes.map((p, i) => (
-            <div
-              key={i}
-              className="
-                flex justify-between items-center
-                bg-white/5 border border-white/10
-                rounded-xl px-6 py-5
-                hover:border-yellow-400/40
-                transition-colors
-              "
-            >
-              <div>
-                <p className="font-semibold text-white">{p.title}</p>
-
-                {p.note && (
-                  <p className="text-sm text-white/60">{p.note}</p>
-                )}
-              </div>
-
-              <span className="font-bold text-yellow-400 text-lg">
-                {p.prize}
-              </span>
+        {p.amount ? (
+          <>
+            <div className="mt-6 text-white/80 font-semibold tracking-wide">
+              {p.title}
             </div>
-          ))}
+            <div className="mt-1 text-white/60 text-sm">
+              {p.subtitle}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="mt-6 text-white/70 text-sm">
+              {p.subtitle}
+            </div>
+            <div className="mt-2 text-white/60 text-sm">
+              {p.desc}
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
 
+function PrizeSection({
+  title,
+  subtitle,
+  children,
+}: {
+  title: string;
+  subtitle?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="mb-24">
+      <div className="text-center mb-14">
+        <h3 className="text-2xl md:text-3xl font-extrabold text-yellow-400">
+          {title}
+        </h3>
+        {subtitle && (
+          <p className="mt-2 text-white/60 max-w-2xl mx-auto">
+            {subtitle}
+          </p>
+        )}
+      </div>
+
+      <div className="grid grid-cols-1 place-items-center md:grid-cols-3 gap-14">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+export default function PrizesSection() {
+  return (
+    <section className="bg-black py-28 px-6">
+      <div className="mx-auto max-w-6xl">
+
+        {/* PAGE HEADER */}
+        <div className="text-center mb-24">
+          <p className="text-yellow-500 font-semibold tracking-widest uppercase">
+            Prizes
+          </p>
+          <h2 className="mt-3 text-white text-3xl md:text-5xl font-extrabold">
+            Win Big. Build Bigger.
+          </h2>
+          <p className="mt-3 text-white/70 max-w-2xl mx-auto">
+            Compete across national-level challenges, individual events,
+            and special recognition categories.
+          </p>
         </div>
+
+        {/* MAIN HACKATHON PRIZES */}
+        <PrizeSection
+          title="National Hackathon Winners"
+          subtitle="Top 3 teams across the entire hackathon"
+        >
+          {mainPrizes.map((p) => (
+            <PrizeCard key={p.title} p={p} />
+          ))}
+        </PrizeSection>
+
+        {/* EVENT PRIZES */}
+        <PrizeSection
+          title="Day 1 Competitions"
+          subtitle="Each event has its own winners"
+        >
+          {eventPrizes.map((p) => (
+            <PrizeCard key={p.title} p={p} />
+          ))}
+        </PrizeSection>
+
+        {/* SPECIAL PRIZES */}
+        <PrizeSection
+          title="Special Awards"
+          subtitle="Celebrating diversity, beginners, and excellence"
+        >
+          {specialPrizes.map((p) => (
+            <PrizeCard key={p.title} p={p} />
+          ))}
+        </PrizeSection>
+
       </div>
     </section>
   );
