@@ -40,8 +40,6 @@ const borderColor = useTransform(
   ["rgba(234,179,8,0)", "rgba(234,179,8,0.45)"] // yellow-500
 );
 
-  const radius = useTransform(scrollY, [0, 80], ["12px", "9999px"]);
-  const scale = useTransform(scrollY, [0, 80], [1, 0.96]);
 const shadow = useTransform(
   scrollY,
   [0, 80],
@@ -63,7 +61,7 @@ const shadow = useTransform(
   className="
     fixed top-6 left-1/2 -translate-x-1/2 z-50
     flex items-center
-    px-6 h-14
+    px-8 h-17
     w-full md:w-fit
   "
 >
