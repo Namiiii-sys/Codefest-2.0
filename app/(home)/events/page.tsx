@@ -1,13 +1,12 @@
-import Events from "./eventx"
+import { TimelineDemo } from "./eventx";
 import HackathonDetails from "./hackathon";
 import MoreSponsors from "./moresponsors";
 import PrizeDetails from "./prizedetails";
 function page() {
   return (
     <>
-<HackathonDetails/>
-<PrizeDetails/>
-<Events/>
+    <HackathonDetails/>
+<TimelineDemo/>
 <MoreSponsors/>
  </>
   )

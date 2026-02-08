@@ -43,7 +43,7 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="space-y-3 ">
-              <h3 className="text-yellow-400 font-semibold tracking-widest uppercase text-s">
+              <h3 className="text-yellow-400 text-center md:text-justify font-semibold tracking-widest uppercase text-s">
                 Contact
               </h3>
 
@@ -76,11 +76,11 @@ export default function Footer() {
 
             {/* Follow */}
             <div className="space-y-4">
-              <h3 className="text-yellow-400 font-semibold tracking-widest uppercase text-s">
+              <h3 className="text-yellow-400 text-center md:text-justify font-semibold tracking-widest uppercase text-s">
                 Follow Us
               </h3>
 
-              <div className="flex gap-3 justify-center flex-wrap">
+              <div className="flex gap-3  justify-center flex-wrap">
 
                 <Link
                   href="mailto:info@acmsscbs"
@@ -128,7 +128,7 @@ export default function Footer() {
                 </Link>
 
               </div>
-              <div className="flex justify-center">
+              <div className="flex  justify-center">
                 <Link
                 href="https://wa.me/+918178281265"
                 target="_blank"
