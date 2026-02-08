@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     "College Hackathon",
     "Coding Competition",
     "Web Development",
+    "SSCBS",
+    "Shaheed Sukhdev College Of Business Studies",
+    "SIIF",
     "AI Hackathon",
     "UI UX Design Challenge",
     "Tech Fest",
@@ -39,13 +42,13 @@ export const metadata: Metadata = {
   creator: "Eklavya Popli",
   publisher: "CodeFest 2.0",
 
-  metadataBase: new URL("https://codefest-9eq.pages.dev"), // change if domain differs
+  metadataBase: new URL("https://codefest.acmsscbs.in"), // change if domain differs
 
   openGraph: {
     title: "CodeFest 2.0 | National Hackathon & Tech Fest",
     description:
       "Join CodeFest 2.0 – a national-level hackathon with exciting coding events, innovation challenges, and real-world problem solving.",
-    url: "https://codefest-9eq.pages.dev",
+    url: "https://codefest.acmsscbs.in",
     siteName: "CodeFest 2.0",
     images: [
       {
