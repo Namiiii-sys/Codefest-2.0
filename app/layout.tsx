@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import { Toaster } from "react-hot-toast";
 export const metadata: Metadata = {
   title: {
     default: "CodeFest 2.0 | National Hackathon & Tech Fest",
@@ -88,6 +88,16 @@ export default function RootLayout({
       <body className="bg-black text-white antialiased">
         <Navbar/>
         {children}
+         <Toaster
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: "#000",
+            color: "#fff",
+            border: "1px solid rgba(255,255,255,0.1)",
+          },
+        }}
+      />
         <Footer/>
       </body>
     </html>
