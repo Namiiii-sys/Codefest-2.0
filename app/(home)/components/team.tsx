@@ -22,6 +22,7 @@ const team: TeamMember[] = [
   { name: "Disha", role: "Organiser", image: "/disha.jpg", linkedin: "#" },
   { name: "Aditi", role: "Organiser", image: "/aditi.jpg", linkedin: "#" },
   { name: "Aniket Anand", role: "Organiser", image: "/aniket.png", linkedin: "#" },
+  { name: "Organising Committee Member", role: "Organiser", image: "/ocs.jpg", linkedin: "#" },
  
 ];
 
