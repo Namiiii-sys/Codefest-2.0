@@ -30,7 +30,7 @@ const mainPrizes: Prize[] = [
   },
   {
     title: "THIRD PLACE",
-    amount: "₹15,000",
+    amount: "₹20,000",
     subtitle: "Second Runner-up",
     desc: "",
     iconSrc: "/third.png",
