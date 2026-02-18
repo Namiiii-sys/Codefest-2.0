@@ -11,15 +11,15 @@ type TeamMember = {
 };
 
 const team: TeamMember[] = [
-  
   {
     name: "Aniket Anand",
     role: "Organiser",
     image: "/aniket.png",
     linkedin: "https://linkedin.com",
-  },{
+  },
+  {
     name: "Dhruv Mukherjee",
-    role: "Organiser and Tech Lead",
+    role: "Organiser & Tech Lead",
     image: "https://codefest-9eq.pages.dev/DPM.jpg",
     linkedin: "https://linkedin.com",
   },
@@ -30,39 +30,38 @@ const team: TeamMember[] = [
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Yajjat",
-    role: "Organiser",
-    image: "/Yajjat.jpg",
+    name: "Industry Mentor",
+    role: "AI & ML Specialist",
+    image: "/mentor-placeholder.jpg",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Namita Mehra",
-    role: "Lead Organiser",
-    image: "https://codefest-9eq.pages.dev/namita.jpg",
+    name: "Startup Advisor",
+    role: "Product & Strategy Mentor",
+    image: "/mentor-placeholder.jpg",
     linkedin: "https://linkedin.com",
   },
   {
-    name: "Namita Mehra",
-    role: "Lead Organiser",
-    image: "https://codefest-9eq.pages.dev/namita.jpg",
+    name: "Technical Reviewer",
+    role: "Full Stack Architect",
+    image: "/mentor-placeholder.jpg",
     linkedin: "https://linkedin.com",
   },
-  
 ];
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
-     <div
+    <div
       className="
-        group flex flex-col overflow-hidden rounded-2xl
-        border border-white/10 hover:border-yellow-500 border-t-white border-r-gray-400 border-l-gray-400
+        group flex flex-col overflow-hidden rounded-xl
+        border border-white/10 hover:border-yellow-500
         bg-white/5 backdrop-blur-xl
         transition-all duration-300
+        max-w-[300px] w-full
       "
-      id="mentors"
     >
       {/* Image */}
-      <div className="relative h-80 w-full">
+      <div className="relative h-48 w-full">
         <Image
           src={member.image}
           alt={member.name}
@@ -72,11 +71,12 @@ function TeamCard({ member }: { member: TeamMember }) {
       </div>
 
       {/* Content */}
-      <div className="flex flex-col items-center text-center p-6 gap-2">
-        <h3 className="text-white text-lg font-semibold">
+      <div className="flex flex-col items-center text-center p-4 gap-1">
+        <h3 className="text-white text-base font-semibold">
           {member.name}
         </h3>
-        <p className="text-white/70 text-sm">
+
+        <p className="text-white/60 text-xs">
           {member.role}
         </p>
 
@@ -85,15 +85,15 @@ function TeamCard({ member }: { member: TeamMember }) {
           target="_blank"
           rel="noreferrer"
           className="
-            mt-3 inline-flex items-center justify-center
-            h-10 w-10 rounded-full
+            mt-2 inline-flex items-center justify-center
+            h-8 w-8 rounded-full
             border border-white/20
             text-white hover:text-yellow-500
             hover:border-yellow-500
             transition-colors
           "
         >
-          <Linkedin size={18} />
+          <Linkedin size={16} />
         </a>
       </div>
     </div>
@@ -103,30 +103,27 @@ function TeamCard({ member }: { member: TeamMember }) {
 export default function Mentors() {
   return (
     <section className="bg-black py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
+
         {/* Heading */}
         <div className="text-center mb-14">
           <h2 className="text-white text-4xl font-bold">
             MENTORS
           </h2>
           <p className="mt-3 text-white/70">
-            The people building CodeFest
+            The people guiding CodeFest
           </p>
         </div>
 
-        {/* Row 1 - 3 cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {team.slice(0, 3).map((member) => (
-            <TeamCard key={member.name} member={member} />
-          ))}
-        </div>
+        {/* Centered Grid */}
+        {/* <div className="flex justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
+            {team.map((member, index) => (
+              <TeamCard key={index} member={member} />
+            ))}
+          </div>
+        </div> */}
 
-        {/* Row 2 - 2 cards centered */}
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8  mx-auto">
-          {team.slice(3).map((member) => (
-            <TeamCard key={member.name} member={member} />
-          ))}
-        </div>
       </div>
     </section>
   );

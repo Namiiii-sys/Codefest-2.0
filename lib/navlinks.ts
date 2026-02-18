@@ -50,6 +50,12 @@ export const navlinks: NavLink[] = [
         link: "/#team",
         icon:Contact
     },
+    {
+        id: 8,
+        name: "Mentors",
+        link: "/#mentors",
+        icon:Contact
+    },
   
 ];
 

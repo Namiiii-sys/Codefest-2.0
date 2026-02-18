@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { Timeline } from "@/components/ui/timeline";
 
 
 export function TimelineDemo() {
@@ -12,20 +13,26 @@ export function TimelineDemo() {
         <div className="space-y-8">
 
           <EventBlock
-            title="Web Auction – Auction Phase"
-            time="10:00 AM – 10:45 AM"
-            short="Live bidding for tech resources"
-            long="Teams strategically bid for tools, APIs, and constraints before development begins."
-            prize="1st 3000, 2nd 1500, 3rd 500 per team"
-          />
+  title="Web Auction"
+  time="10:00 AM – 10:45 AM"
+  short="Live bidding for tech resources"
+  long={
+    <>
+      Teams strategically bid for tools, APIs, and constraints before development begins.
+      {" "}The event will take place in two parts{" "}
+      <span className="font-bold text-yellow-400">
+        Auction Phase
+      </span>{" "}
+      and{" "}
+      <span className="font-bold text-yellow-400">
+        Build Phase
+      </span>.
+    </>
+  }
+  prize="1st 3000, 2nd 1500, 3rd 500 per team"
+/>
 
-          <EventBlock
-            title="Web Auction – Build Phase"
-            time="10:45 AM – 12:45 PM"
-            short="Development sprint"
-            long="Teams develop websites using the auctioned assets."
-            prize="1st 3000, 2nd 1500, 3rd 500 per team"
-          />
+
 
           <EventBlock
             title="Design Apocalypse"
@@ -229,29 +236,36 @@ function EventBlock({
   title: string;
   short: string;
   time: string;
-  long: string;
+  long: React.ReactNode;
   prize: string;
 }) {
-  const [current, setCurrent] = useState(0);
-  const [selected, setSelected] = useState<EventItem | null>(null);
-
-  const next = () => setCurrent((c) => mod(c + 1, events.length));
-  const prev = () => setCurrent((c) => mod(c - 1, events.length));
-
-  useEffect(() => {
-    if (!autoplay) return;
-    const t = setInterval(next, 4500);
-    return () => clearInterval(t);
-  }, [autoplay]);
-
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6" id="mainevents">
-      <h4 className="text-yellow-400 font-extrabold text-2xl">{title}</h4>
-      <h4 className="text-yellow-400 font-semibold text-md">{time}</h4>
-      <p className="mt-2 text-white font-semibold">{short}</p>
+    <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6">
+      
+      <h4 className="text-yellow-400 font-extrabold text-2xl">
+        {title}
+      </h4>
+
+      <h4 className="text-yellow-400 font-semibold text-md mt-1">
+        {time}
+      </h4>
+
+      <p className="mt-3 text-white font-semibold">
+        {short}
+      </p>
+
       <div className="w-16 h-[3px] bg-yellow-500 my-5" />
-      <p className="text-white/80 leading-relaxed whitespace-pre-line">{long}</p>
-      <h4 className="text-yellow-400 font-semibold text-md">{prize}</h4>
+
+      <p className="text-white/80 leading-relaxed whitespace-pre-line">
+        {long}
+      </p>
+
+      {prize && (
+        <p className="text-yellow-400 font-semibold text-md mt-4">
+          {prize}
+        </p>
+      )}
+
     </div>
   );
 }

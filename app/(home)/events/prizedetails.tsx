@@ -12,12 +12,9 @@ type PrizeItem = {
 
 const prizes: PrizeItem[] = [
   { title: "First Place", prize: "₹50,000" },
-  { title: "Second Place", prize: "₹35,000" },
+  { title: "Second Place", prize: "₹30,000" },
   { title: "Third Place", prize: "₹20,000" },
 
-  { title: "Best Beginner Team", prize: "₹5,000", note: "Swags & goodies" },
-  { title: "Best Girls Team", prize: "₹5,000", note: "Swags & goodies" },
-  { title: "Best Use of GenAI", prize: "₹5,000", note: "Swags & goodies" },
 ];
 
 /* =========================================

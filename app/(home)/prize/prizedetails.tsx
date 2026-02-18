@@ -65,31 +65,31 @@ const eventPrizes: Prize[] = [
   },
 ];
 
-const specialPrizes: Prize[] = [
-  {
-    title: "Best Beginner Team",
-    amount: "₹2,000",
-    subtitle: "Special Recognition Award",
-    desc: "+ Swags & Goodies",
-    iconSrc: "/beginner.png",
-    iconAlt: "Best beginner",
-  },
-  {
-    title: "Best Girls Team",
-    amount: "₹2,000",
-    subtitle: "Special Recognition Award",
-    desc: "+ Swags & Goodies",
-    iconSrc: "/girl.png",
-    iconAlt: "Best girls team",
-  },  {
-    title: "Best Use of GenAI",
-    amount: "",
-    subtitle: "Cash Prize of INR 5,000",
-    desc: "+ Swags and Goodies",
-    iconSrc: "/genai.png",
-    iconAlt: "Best use of GenAI",
-  },
-];
+// const specialPrizes: Prize[] = [
+//   {
+//     title: "Best Beginner Team",
+//     amount: "₹2,000",
+//     subtitle: "Special Recognition Award",
+//     desc: "+ Swags & Goodies",
+//     iconSrc: "/beginner.png",
+//     iconAlt: "Best beginner",
+//   },
+//   {
+//     title: "Best Girls Team",
+//     amount: "₹2,000",
+//     subtitle: "Special Recognition Award",
+//     desc: "+ Swags & Goodies",
+//     iconSrc: "/girl.png",
+//     iconAlt: "Best girls team",
+//   },  {
+//     title: "Best Use of GenAI",
+//     amount: "",
+//     subtitle: "Cash Prize of INR 5,000",
+//     desc: "+ Swags and Goodies",
+//     iconSrc: "/genai.png",
+//     iconAlt: "Best use of GenAI",
+//   },
+// ];
 
 
 function PrizeCard({ p }: { p: Prize }) {
@@ -237,14 +237,14 @@ export default function PrizesSection() {
         </PrizeSection>
 
         {/* SPECIAL PRIZES */}
-        <PrizeSection
+        {/* <PrizeSection
           title="Special Awards"
           subtitle="Celebrating diversity, beginners, and excellence"
         >
           {specialPrizes.map((p) => (
             <PrizeCard key={p.title} p={p} />
           ))}
-        </PrizeSection>
+        </PrizeSection> */}
 
       </div>
     </section>
