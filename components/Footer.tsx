@@ -65,8 +65,8 @@ export default function Footer() {
 
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-yellow-400" />
-                  <Link href="mailto:info@acmsscbs" className="text-sm hover:text-yellow-400">
-                    info@acmsscbs
+                  <Link href="mailto:acm-chapter@sscbs.du.ac.in" className="text-sm hover:text-yellow-400">
+                   acm-chapter@sscbs.du.ac.in
                   </Link>
                 </div>
 
@@ -83,7 +83,7 @@ export default function Footer() {
               <div className="flex gap-3 justify-center flex-wrap">
 
                 <Link
-                  href="mailto:info@acmsscbs"
+                  href="mailto:acm-chapter@sscbs.du.ac.in"
                   target="_blank"
                   aria-label="Mail"
                   className="p-2 rounded-lg bg-slate-800 hover:bg-yellow-500 transition-colors"
@@ -92,7 +92,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  href="https://www.facebook.com"
+                  href="https://share.google/lkMc8ERYB7hm9DwNx"
                   target="_blank"
                   aria-label="Facebook"
                   className="p-2 rounded-lg bg-slate-800 hover:bg-yellow-500 transition-colors"
@@ -101,7 +101,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  href="https://www.x.com"
+                  href="https://share.google/9EJg12CpWyxHgGyjS"
                   target="_blank"
                   aria-label="Twitter"
                   className="p-2 rounded-lg bg-slate-800 hover:bg-yellow-500 transition-colors"
@@ -110,7 +110,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/company/acm-sscbs/"
                   target="_blank"
                   aria-label="LinkedIn"
                   className="p-2 rounded-lg bg-slate-800 hover:bg-yellow-500 transition-colors"

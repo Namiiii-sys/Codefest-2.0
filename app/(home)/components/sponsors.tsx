@@ -32,7 +32,7 @@ const EmptyCard = ({ src, alt }: { src?: string; alt?: string }) => (
         <Image
           src={src}
           alt={alt || ""}
-          width={260}
+          width={240}
           height={100}
           className="object-contain max-h-[80%] w-auto"
         />
