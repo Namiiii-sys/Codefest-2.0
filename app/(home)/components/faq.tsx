@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "Are there any registration fees?",
-    a: "No, there is no regitration fee.",
+    a: "No, there is no registration fee.",
   },
   {
     q: "What kind of prizes can participants expect?",
