@@ -130,7 +130,7 @@ export default function Footer() {
               </div>
               <div className="flex justify-center">
                 <Link
-                href="https://wa.me/+918178281265"
+                href="https://chat.whatsapp.com/JF2nNw3KGQAAAZmDtzdQv8?mode=gi_t"
                 target="_blank"
                 className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-700 px-6 py-2.5 rounded-lg text-sm"
               >

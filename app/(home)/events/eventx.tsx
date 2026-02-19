@@ -27,6 +27,7 @@ export function TimelineDemo() {
       <span className="font-bold text-yellow-400">
         Build Phase
       </span>.
+      Team size: 2-4.
     </>
   }
   prize="1st 3000, 2nd 1500, 3rd 500 per team"
@@ -38,7 +39,7 @@ export function TimelineDemo() {
             title="Design Apocalypse"
             time="01:00 PM – 02:30 PM"
             short="Time-bound UI/UX sprint"
-            long="Rapid design challenge focused on usability, creativity, and execution."
+            long="Rapid design challenge focused on usability, creativity, and execution. Team size: 2-4."
             prize="1st 3000, 2nd 1500, 3rd 500 per team"
           />
 
@@ -46,7 +47,7 @@ export function TimelineDemo() {
             title="Blind Code"
             time="02:45 PM – 04:15 PM"
             short="Logic-first coding challenge"
-            long="Solve algorithmic problems without seeing test cases."
+            long="Solve algorithmic problems without seeing test cases. Team size: Individual."
             prize="1st 3000, 2nd 1500, 3rd 500 per team"
           />
 
@@ -54,7 +55,7 @@ export function TimelineDemo() {
             title="Code Phantom"
             time="04:30 PM – 06:00 PM"
             short="DSA competition"
-            long="Efficiency-driven coding and deep problem-solving rounds."
+            long="Efficiency-driven coding and deep problem-solving rounds.Team size: Individual."
             prize="1st 3000, 2nd 1500, 3rd 500 per team"
           />
         </div>
