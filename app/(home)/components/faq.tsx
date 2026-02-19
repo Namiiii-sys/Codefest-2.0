@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "Are there any registration fees?",
-    a: "Registration details, including fees (if any), will be mentioned on the official CodeFest 2.0 registration page.",
+    a: "No, there is no regitration fee.",
   },
   {
     q: "What kind of prizes can participants expect?",
@@ -48,62 +48,76 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-black py-20 px-6">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-black py-14 px-4">
+      <div className="max-w-3xl mx-auto">
+
         {/* Heading */}
-        <div className="text-center mb-14">
-          <h2 className={`${cinzel.className} text-4xl font-extrabold text-yellow-500 tracking-widest`}>
+        <div className="text-center mb-10">
+          <h2 className={`${cinzel.className} text-3xl md:text-4xl font-extrabold text-yellow-500 tracking-widest`}>
             FAQ
           </h2>
-          <p className="mt-3 text-white/70">
+          <p className="mt-2 text-white/60 text-sm">
             Everything you need to know about CodeFest 2.0
           </p>
         </div>
 
         {/* FAQ List */}
-        <div className="space-y-8">
+        <div className="space-y-4">
           {faqs.map((item, index) => {
+
             const isOpen = openIndex === index;
 
             return (
               <div
                 key={index}
                 className="
-                border-t-gray-500 border-r-gray-600 border-b-gray-800 border-l-gray-600 border rounded-md 
+                  border border-white/10 rounded-md
+                  hover:border-yellow-500/40
                   transition-all
                 "
               >
+
                 {/* Question */}
                 <button
                   onClick={() =>
                     setOpenIndex(isOpen ? null : index)
                   }
-                  className="w-full flex items-center justify-between gap-4 p-4 text-left"
+                  className="
+                    w-full flex items-center justify-between
+                    gap-4 px-4 py-3 text-left
+                  "
                 >
-                  <span className="text-yellow-500 font-semibold text-base md:text-lg">
+                  <span className="text-yellow-500 font-semibold text-sm md:text-base">
                     {item.q}
                   </span>
+
                   <ChevronDown
-                    className={`w-5 h-5 text-yellow-500 transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
+                    className={`
+                      w-4 h-4 text-yellow-500
+                      transition-transform duration-300
+                      ${isOpen ? "rotate-180" : ""}
+                    `}
                   />
                 </button>
 
                 {/* Answer */}
                 <div
-                  className={`px-5 overflow-hidden transition-all duration-300 ${
-                    isOpen ? "max-h-40 pb-5" : "max-h-0"
-                  }`}
+                  className={`
+                    overflow-hidden transition-all duration-300
+                    ${isOpen ? "max-h-32 pb-4 px-4" : "max-h-0 px-4"}
+                  `}
                 >
-                  <p className="text-white text-sm md:text-base leading-relaxed">
+                  <p className="text-white/80 text-sm leading-relaxed">
                     {item.a}
                   </p>
                 </div>
+
               </div>
             );
+
           })}
         </div>
+
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import PrizesSection from "./components/prizes";
 import MeetTheTeam from "./components/team";
 import Mentors from "./components/mentors";
 import FAQ from "./components/faq";
+import Glimpses from "./components/glimpses"
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <Hero />
       <TempleRopeTimeline />
       <AboutSection />
+      <Glimpses/>
       <PrizesSection/>
       <SponsorsSection />
       <MeetTheTeam/>

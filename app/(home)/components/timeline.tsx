@@ -26,7 +26,7 @@ const day1: Item[] = [
   {
     title: "Online Registration Starts",
     date: "",
-    time: "on 18th Feb",
+    time: "on 28th Feb",
     short: "<registration link>",
     long: "",
   },

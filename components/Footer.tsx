@@ -51,15 +51,15 @@ export default function Footer() {
 
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-yellow-400" />
-                  <Link href="tel:+918178281265" className="text-sm hover:text-yellow-400">
-                    +91 8178281265
+                  <Link href="tel:+916395614834" className="text-sm hover:text-yellow-400">
+                    Namita Mehra: +91 63956 14834
                   </Link>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-yellow-400" />
-                  <Link href="tel:+919999999999" className="text-sm hover:text-yellow-400">
-                    +91 99999 99999
+                  <Link href="tel:+918468045893" className="text-sm hover:text-yellow-400">
+                    Shubhangi Maurya: +91 84680 45893
                   </Link>
                 </div>
 
@@ -119,7 +119,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  href="https://www.instagram.com/paramount_dream_homes/"
+                  href="https://www.instagram.com/cbs_codefest/"
                   target="_blank"
                   aria-label="Instagram"
                   className="p-2 rounded-lg bg-slate-800 hover:bg-yellow-500 transition-colors"
