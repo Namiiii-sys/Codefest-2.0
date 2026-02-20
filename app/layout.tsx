@@ -31,12 +31,11 @@ export const metadata: Metadata = {
 
   authors: [
     {
-      name: "Eklavya Popli",
-      url: "https://eklavyapopli.humkind.in",
+      name: "Namita Mehra",
     },
   ],
 
-  creator: "Eklavya Popli",
+  creator: "Namita Mehra",
   publisher: "CodeFest 2.0",
 
   metadataBase: new URL("https://codefest-9eq.pages.dev"), // change if domain differs
