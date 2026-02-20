@@ -100,7 +100,7 @@ export default function SponsorsSection() {
 
 
   return (
-    <section className="bg-black py-20 px-6">
+    <section id="sponsors" className="bg-black py-20 px-6">
 
       <div className="mx-auto max-w-7xl">
 
@@ -130,7 +130,7 @@ export default function SponsorsSection() {
           <p className="text-neutral-400 text-lg">
             Interested in sponsoring us?{" "}
             <a
-              href="mailto:acm-chapter@sscbs.du.ac.in"
+              href="/sponsorform"
               className="text-yellow-500 font-bold hover:underline transition-all"
             >
               Get in touch
@@ -139,7 +139,44 @@ export default function SponsorsSection() {
         </div>
 
       </div>
+      {/* Brochure Section */}
+      <div className="mb-10 bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
 
+        <div>
+          <h2 className="text-yellow-400 font-semibold">
+            Sponsorship Brochure
+          </h2>
+
+          <p className="text-white/60 text-sm">
+            Download or view our sponsorship details and benefits.
+          </p>
+        </div>
+
+        <div className="flex gap-3">
+
+          {/* View */}
+          <a
+            href={brochure.file}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 border border-yellow-400 text-yellow-400 rounded-lg hover:bg-yellow-400 hover:text-black transition"
+          >
+            View
+          </a>
+
+          {/* Download */}
+          <a
+            href={brochure.file}
+            download
+            className="px-4 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400 transition"
+          >
+            Download
+          </a>
+
+        </div>
+
+      </div>
     </section>
+
   );
 }

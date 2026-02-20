@@ -24,10 +24,10 @@ export default function Footer() {
 
       <div className="px-6 py-16 bg-slate-950 text-white">
 
-        <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-5 gap-12 items-stretch">
+        <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
           {/* LEFT SIDE (Logo + Contact + Follow) */}
-          <div className="md:col-span-2 flex flex-col justify-center space-y-8">
+          <div className="flex flex-col justify-center space-y-8 items-center text-center">
 
             {/* Logo (smaller) */}
             <div className="flex justify-center">
@@ -153,7 +153,7 @@ export default function Footer() {
                   className="text-sm hover:text-yellow-400 transition-colors flex items-center gap-2"
                 >
                   <div className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
-                  CodeFest 1.0 (2024)
+                  CodeFest 1.0 (2025)
                 </Link>
                 <p className="text-[10px] text-gray-500 mt-1 italic">
                   Relive the first chapter of our legacy
@@ -165,13 +165,17 @@ export default function Footer() {
 
 
           {/* RIGHT SIDE (Bigger Map) */}
-          <div className="md:col-span-3 w-full min-h-[360px]">
+          {/* RIGHT SIDE (Map) */}
+          <div className="w-full flex justify-center">
+            <div className="w-full max-w-[460px] h-[260px]">
 
-            <iframe
-              className="w-full h-full rounded-2xl shadow-xl"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.5621206496758!2d77.11589247550451!3d28.732629375610216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d013938e13ba5%3A0xbacd4c8f320fa4ff!2sSHAHEED%20SUKHDEV%20COLLEGE%20OF%20BUSINESS%20STUDIES!5e0!3m2!1sen!2sin!4v1768716593168!5m2!1sen!2sin"
-              loading="lazy"
-            />
+              <iframe
+                className="w-full h-full rounded-lg shadow-md border border-yellow-500/20"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.5621206496758!2d77.11589247550451!3d28.732629375610216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d013938e13ba5%3A0xbacd4c8f320fa4ff!2sSHAHEED%20SUKHDEV%20COLLEGE%20OF%20BUSINESS%20STUDIES!5e0!3m2!1sen!2sin"
+                loading="lazy"
+              />
+
+            </div>
 
           </div>
 
