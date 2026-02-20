@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function PrizesFull() {
-  const totalPrize = "120000";
+  const totalPrize = 120000;
   const duration = 1500; // animation duration in ms
 
   const [count, setCount] = useState(0);
