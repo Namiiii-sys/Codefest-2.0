@@ -51,22 +51,22 @@ export default function Footer() {
 
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-yellow-400" />
-                  <Link href="tel:+918178281265" className="text-sm hover:text-yellow-400">
-                    +91 8178281265
+                  <Link href="tel:+916395614834" className="text-sm hover:text-yellow-400">
+                    Namita Mehra: +91 63956 14834
                   </Link>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-yellow-400" />
-                  <Link href="tel:+919999999999" className="text-sm hover:text-yellow-400">
-                    +91 99999 99999
+                  <Link href="tel:+918468045893" className="text-sm hover:text-yellow-400">
+                    Shubhangi Maurya: +91 84680 45893
                   </Link>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-yellow-400" />
-                  <Link href="mailto:info@acmsscbs" className="text-sm hover:text-yellow-400">
-                    info@acmsscbs
+                  <Link href="mailto:acm-chapter@sscbs.du.ac.in" className="text-sm hover:text-yellow-400">
+                   acm-chapter@sscbs.du.ac.in
                   </Link>
                 </div>
 
@@ -83,7 +83,7 @@ export default function Footer() {
               <div className="flex gap-3 justify-center flex-wrap">
 
                 <Link
-                  href="mailto:info@acmsscbs"
+                  href="mailto:acm-chapter@sscbs.du.ac.in"
                   target="_blank"
                   aria-label="Mail"
                   className="p-2 rounded-lg bg-slate-800 hover:bg-yellow-500 transition-colors"
@@ -92,7 +92,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  href="https://www.facebook.com"
+                  href="https://share.google/lkMc8ERYB7hm9DwNx"
                   target="_blank"
                   aria-label="Facebook"
                   className="p-2 rounded-lg bg-slate-800 hover:bg-yellow-500 transition-colors"
@@ -101,7 +101,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  href="https://www.x.com"
+                  href="https://share.google/9EJg12CpWyxHgGyjS"
                   target="_blank"
                   aria-label="Twitter"
                   className="p-2 rounded-lg bg-slate-800 hover:bg-yellow-500 transition-colors"
@@ -110,7 +110,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/company/acm-sscbs/"
                   target="_blank"
                   aria-label="LinkedIn"
                   className="p-2 rounded-lg bg-slate-800 hover:bg-yellow-500 transition-colors"
@@ -119,7 +119,7 @@ export default function Footer() {
                 </Link>
 
                 <Link
-                  href="https://www.instagram.com/paramount_dream_homes/"
+                  href="https://www.instagram.com/cbs_codefest/"
                   target="_blank"
                   aria-label="Instagram"
                   className="p-2 rounded-lg bg-slate-800 hover:bg-yellow-500 transition-colors"
@@ -130,7 +130,7 @@ export default function Footer() {
               </div>
               <div className="flex justify-center">
                 <Link
-                href="https://wa.me/+918178281265"
+                href="https://chat.whatsapp.com/JF2nNw3KGQAAAZmDtzdQv8?mode=gi_t"
                 target="_blank"
                 className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-700 px-6 py-2.5 rounded-lg text-sm"
               >

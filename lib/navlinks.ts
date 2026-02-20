@@ -16,15 +16,15 @@ export const navlinks: NavLink[] = [
     },
     {
         id: 2,
-        name: "About",
-        link: "/#about",
-        icon:Download
-    },
-    {
-        id: 3,
         name: "Timeline",
         link: "/#timeline",
         icon:User
+    },
+    {
+        id: 3,
+        name: "About",
+        link: "/#about",
+        icon:Download
     },
     {
         id: 4,
@@ -34,10 +34,28 @@ export const navlinks: NavLink[] = [
     },
     {
         id: 5,
+        name: "Prizes",
+        link: "/prize",
+        icon:Contact
+    },
+    {
+        id: 6,
+        name: "Sponsors",
+        link: "/#sponsors",
+        icon:Contact
+    },
+    {
+        id: 7,
         name: "Team",
         link: "/#team",
         icon:Contact
     },
+    // {
+    //     id: 8,
+    //     name: "Mentors",
+    //     link: "/#mentors",
+    //     icon:Contact
+    // },
   
 ];
 

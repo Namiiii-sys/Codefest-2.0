@@ -2,210 +2,271 @@
 
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { Timeline } from "@/components/ui/timeline";
 
-type EventItem = {
-  title: string;
-  short: string;
-  long: string;
-  time: string;
-  date: string;
-  prize_pool: string;
-};
 
-const mod = (n: number, len: number) => ((n % len) + len) % len;
+export function TimelineDemo() {
+  const data = [
+    {
+      title: "DAY - 1",
+      content: (
+        <div className="space-y-8">
 
-export default function EventsCarousel({
-  events,
-  autoplay = false,
-  frameImage = "/bg3.jpeg",
-}: {
-  events: EventItem[];
-  autoplay?: boolean;
-  frameImage?: string;
-}) {
-  const [current, setCurrent] = useState(0);
-  const [selected, setSelected] = useState<EventItem | null>(null);
+          <EventBlock
+  title="Web Auction"
+  time="10:00 AM – 10:45 AM"
+  short="Live bidding for tech resources"
+  long={
+    <>
+      Teams strategically bid for tools, APIs, and constraints before development begins.
+      {" "}The event will take place in two parts{" "}
+      <span className="font-bold text-yellow-400">
+        Auction Phase
+      </span>{" "}
+      and{" "}
+      <span className="font-bold text-yellow-400">
+        Build Phase
+      </span>.
+      Team size: 2-4.
+    </>
+  }
+  prize="1st 3000, 2nd 1500, 3rd 500 per team"
+/>
 
-  const next = () => setCurrent((c) => mod(c + 1, events.length));
-  const prev = () => setCurrent((c) => mod(c - 1, events.length));
 
-  useEffect(() => {
-    if (!autoplay) return;
-    const t = setInterval(next, 4500);
-    return () => clearInterval(t);
-  }, [autoplay]);
+
+          <EventBlock
+            title="Design Apocalypse"
+            time="01:00 PM – 02:30 PM"
+            short="Time-bound UI/UX sprint"
+            long="Rapid design challenge focused on usability, creativity, and execution. Team size: 2-4."
+            prize="1st 3000, 2nd 1500, 3rd 500 per team"
+          />
+
+          <EventBlock
+            title="Blind Code"
+            time="02:45 PM – 04:15 PM"
+            short="Logic-first coding challenge"
+            long="Solve algorithmic problems without seeing test cases. Team size: Individual."
+            prize="1st 3000, 2nd 1500, 3rd 500 per team"
+          />
+
+          <EventBlock
+            title="Code Phantom"
+            time="04:30 PM – 06:00 PM"
+            short="DSA competition"
+            long="Efficiency-driven coding and deep problem-solving rounds.Team size: Individual."
+            prize="1st 3000, 2nd 1500, 3rd 500 per team"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "DAY - 2",
+      content: (
+        <div className="space-y-8">
+
+          {/* HACKATHON CORE */}
+          <div className="relative rounded-3xl border border-yellow-400/30 bg-gradient-to-br from-yellow-500/15 via-black to-black backdrop-blur-xl p-8 md:p-12 overflow-hidden">
+
+            {/* subtle glow accent */}
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-yellow-400/10 blur-3xl rounded-full" />
+
+            {/* HEADER */}
+            <div className="relative z-10">
+
+              <h4 className="text-yellow-400 font-extrabold text-3xl md:text-5xl tracking-wide">
+                12-Hour Offline Hackathon
+              </h4>
+
+              <p className="text-yellow-400/80 font-semibold mt-3 text-lg">
+                09:30 AM — 09:00 PM
+              </p>
+
+              <p className="mt-6 text-white font-medium text-lg max-w-2xl leading-relaxed">
+                This is where ideas stop being ideas.
+                Build under pressure. Adapt in real time. Deliver something that works.
+              </p>
+
+              <div className="w-24 h-[3px] bg-yellow-500 mt-6 mb-10" />
+
+            </div>
+
+
+            {/* MAIN GRID */}
+            <div className="relative z-10 grid md:grid-cols-2 gap-12">
+
+              {/* LEFT COLUMN */}
+              <div className="space-y-8">
+
+                {/* Overview */}
+                <div>
+                  <h5 className="text-yellow-400 font-semibold text-lg mb-3">
+                    Structure
+                  </h5>
+
+                  <ul className="space-y-2 text-white/80">
+                    <li>• Continuous 12-hour build window</li>
+                    <li>• Mentoring and evaluation checkpoints</li>
+                    <li>• Top teams shortlisted for final review</li>
+                    <li>• Live demonstrations before judges</li>
+                  </ul>
+                </div>
+
+
+                {/* Team */}
+                <div>
+                  <h5 className="text-yellow-400 font-semibold text-lg mb-3">
+                    Team Composition
+                  </h5>
+
+                  <p className="text-white/80 leading-relaxed">
+                    Teams must consist of 2–4 members.
+                    Diverse skillsets are encouraged to enable complete product execution.
+                  </p>
+                </div>
+
+
+                {/* Criteria */}
+                <div>
+                  <h5 className="text-yellow-400 font-semibold text-lg mb-3">
+                    Evaluation Focus
+                  </h5>
+
+                  <p className="text-white/80 leading-relaxed">
+                    Innovation. Technical depth. Execution quality.
+                    Real-world relevance. Clarity of presentation.
+                  </p>
+                </div>
+
+              </div>
+
+
+
+              {/* RIGHT COLUMN */}
+              <div className="space-y-6">
+
+                <div>
+                  <h5 className="text-yellow-400 font-semibold text-lg mb-4">
+                    Tracks
+                  </h5>
+                </div>
+
+
+                {/* Track */}
+                <div className="group border border-yellow-400/20 bg-yellow-500/5 hover:bg-yellow-500/10 hover:border-yellow-400/40 transition-all rounded-xl p-5">
+
+                  <h6 className="text-yellow-400 font-semibold text-lg">
+                    Web & Application Development
+                  </h6>
+
+                  <p className="text-white/70 text-sm mt-2 leading-relaxed">
+                    Create scalable platforms, production-ready applications,
+                    and fully functional digital systems.
+                  </p>
+
+                </div>
+
+
+                {/* Track */}
+                <div className="group border border-yellow-400/20 bg-yellow-500/5 hover:bg-yellow-500/10 hover:border-yellow-400/40 transition-all rounded-xl p-5">
+
+                  <h6 className="text-yellow-400 font-semibold text-lg">
+                    Artificial Intelligence
+                  </h6>
+
+                  <p className="text-white/70 text-sm mt-2 leading-relaxed">
+                    Develop intelligent systems capable of learning,
+                    predicting, and automating complex tasks.
+                  </p>
+
+                </div>
+
+
+                {/* Track */}
+                <div className="group border border-yellow-400/20 bg-yellow-500/5 hover:bg-yellow-500/10 hover:border-yellow-400/40 transition-all rounded-xl p-5">
+
+                  <h6 className="text-yellow-400 font-semibold text-lg">
+                    Open Innovation
+                  </h6>
+
+                  <p className="text-white/70 text-sm mt-2 leading-relaxed">
+                    Pursue original ideas that challenge convention
+                    and solve meaningful real-world problems.
+                  </p>
+
+                </div>
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+      ),
+    }
+
+  ];
 
   return (
-    <>
-      {/* ================= CAROUSEL ================= */}
-      <section className="min-h-[50vh] md:min-h-[90vh] md:px-0 px-10 w-full">
-        <div className="container mx-auto px-4">
-
-          <p className="text-center text-muted-foreground mb-16 font-cinzel">
-            Navigate through our exciting lineup
-          </p>
-
-          <div className="relative mx-auto">
-
-            {/* arrows */}
-            <button
-              onClick={next}
-              className="
-                absolute
-                -left-4 md:left-10
-
-                top-[25%] md:top-1/2
-                md:-translate-y-1/2
-
-                z-40 w-12 h-12
-                rounded-full bg-secondary
-                flex items-center justify-center
-                hover:scale-110 transition golden-glow
-              "
-            >
-              <ChevronLeft className="w-6 h-6 text-black" />
-            </button>
+    <div className="relative w-full overflow-clip bg-black">
+      <Timeline
+        data={data}
+        heading="EVENTS"
+        subheading="Explore the flow of CodeFest 2.0 across two days."
+      />
+    </div>
+  );
+}
 
 
-            <button
-              onClick={prev}
-              className="
-              absolute
-              -right-4 md:right-10
+function EventBlock({
+  title,
+  short,
+  time,
+  long,
+  prize,
+}: {
+  title: string;
+  short: string;
+  time: string;
+  long: React.ReactNode;
+  prize: string;
+}) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6">
+      
+      <h4 className="text-yellow-400 font-extrabold text-2xl">
+        {title}
+      </h4>
 
-              top-[25%] md:top-1/2
-              md:-translate-y-1/2
+      <h4 className="text-yellow-400 font-semibold text-md mt-1">
+        {time}
+      </h4>
 
-              z-40 w-12 h-12
-              rounded-full bg-secondary
-              flex items-center justify-center
-              hover:scale-110 transition golden-glow
-            "
-            >
+      <p className="mt-3 text-white font-semibold">
+        {short}
+      </p>
 
-              <ChevronRight className="w-6 h-6 text-black" />
-            </button>
+      <div className="w-16 h-[3px] bg-yellow-500 my-5" />
 
-            {/* cards */}
-            <div className="relative h-[550px] sm:h-[480px] md:h-[500px]">
-              {events.map((event, i) => {
-                const isMiddle = i === current;
-                const isLeft = i === mod(current - 1, events.length);
-                const isRight = i === mod(current + 1, events.length);
+      <p className="text-white/80 leading-relaxed whitespace-pre-line">
+        {long}
+      </p>
 
-                let style;
-
-                const isMobile =
-                  typeof window !== "undefined" && window.innerWidth < 768;
-
-                const sideScale = isMobile ? 0.7 : 0.9;   // 🔥 smaller only on mobile
-                const farScale = isMobile ? 0.5 : 0.85;
-                const leftPos = isMobile ? "5%" : "10%";
-                const rightPos = isMobile ? "95%" : "90%";
-                const yPos = isMobile ? "25%" : "55%";
-
-                if (isMiddle)
-                  style = { x: "50%", y: "0%", s: 1.1, z: 30, o: 1 };
-                else if (isLeft)
-                  style = { x: leftPos, y: yPos, s: sideScale, z: 20, o: 0.9 };
-                else if (isRight)
-                  style = { x: rightPos, y: yPos, s: sideScale, z: 20, o: 0.9 };
-                else
-                  style = { x: rightPos, y: yPos, s: farScale, z: 5, o: 0 };
-
-
-                return (
-                  <div
-                    key={i}
-                    onClick={() => setSelected(event)}   // 🔥 open modal
-                    className="absolute w-64 sm:w-56 md:w-72 cursor-pointer"
-                    style={{
-                      left: style.x,
-                      top: style.y,
-                      transform: `translate(-50%,0) scale(${style.s})`,
-                      zIndex: style.z,
-                      opacity: style.o,
-                      transition: "all .6s cubic-bezier(.4,0,.2,1)",
-                      pointerEvents: style.o === 0 ? "none" : "auto",
-                    }}
-                  >
-                    <div
-                      className="relative overflow-hidden rounded-lg hover:scale-[1.03] transition"
-                      style={{
-                        backgroundImage: `url(${frameImage})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        aspectRatio: "3/4",
-                      }}
-                    >
-                      <div className="absolute inset-0 bg-black/40" />
-
-                      <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-5 text-white z-10">
-
-                        <span className="text-xs bg-black/60 px-3 py-1 rounded-full text-[#ffe9a3]">
-                          {event.date}
-                        </span>
-
-                        <h3 className="text-xl font-bold mt-3">
-                          {event.title}
-                        </h3>
-
-                        <p className="text-sm text-[#ffd86b] mt-2">
-                          {event.time}
-                        </p>
-
-                        {event.prize_pool && (
-                          <div className="mt-3 text-sm font-bold bg-black/60 px-3 py-1 rounded-full">
-                            {event.prize_pool}
-                          </div>
-                        )}
-
-                        <p className="mt-4 text-xs opacity-70">
-                          Click for details
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= MODAL ================= */}
-      {selected && (
-        <div
-          className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50"
-          onClick={() => setSelected(null)}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="bg-neutral-900 max-w-lg w-[90%] rounded-xl p-8 text-white relative animate-fadeIn"
-          >
-            <button
-              className="absolute right-4 top-4"
-              onClick={() => setSelected(null)}
-            >
-              <X />
-            </button>
-
-            <h2 className="text-2xl font-bold mb-3">{selected.title}</h2>
-
-            <p className="text-yellow-400 font-semibold">
-              {selected.date} • {selected.time}
-            </p>
-
-            {selected.prize_pool && (
-              <p className="mt-2 font-bold">{selected.prize_pool}</p>
-            )}
-
-            <p className="mt-5 text-white/90 leading-relaxed">
-              {selected.long}
-            </p>
-          </div>
-        </div>
+      {prize && (
+        <p className="text-yellow-400 font-semibold text-md mt-4">
+          {prize}
+        </p>
       )}
-    </>
+
+    </div>
   );
 }
