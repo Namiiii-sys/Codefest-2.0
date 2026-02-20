@@ -85,6 +85,22 @@ export default function Glimpses() {
     }
   }, [animate]);
 
+  // prefetch next/prev images
+  useEffect(() => {
+    const prefetch = (idx: number) => {
+      const glimpse = buffered[idx];
+      if (!glimpse) return;
+      glimpse.images.forEach(src => {
+        const img = new window.Image();
+        img.src = src;
+      });
+    };
+
+    // prefetch next and prev
+    prefetch(index + 1);
+    prefetch(index - 1);
+  }, [index]);
+
   return (
     <section className="bg-black py-24 px-6">
 
@@ -106,42 +122,45 @@ export default function Glimpses() {
             }}
           >
 
-            {buffered.map((glimpse, gIndex) => (
+            {buffered.map((glimpse, gIndex) => {
+              const isVisible = gIndex === index;
 
-              <div key={gIndex} className="w-full flex-shrink-0 px-1">
+              return (
+                <div key={gIndex} className="w-full flex-shrink-0 px-1">
 
-                <div className={`grid gap-4 ${glimpse.images.length > 1
-                  ? "grid-cols-1 md:grid-cols-2"
-                  : "grid-cols-1"
-                  }`}>
+                  <div className={`grid gap-4 ${glimpse.images.length > 1
+                    ? "grid-cols-1 md:grid-cols-2"
+                    : "grid-cols-1"
+                    }`}>
 
-                  {glimpse.images.map((src, i) => (
+                    {glimpse.images.map((src, i) => (
 
-                    <div key={i} className="relative w-full h-[320px]">
+                      <div key={i} className="relative w-full h-[320px]">
 
-                      <Image
-                        src={src}
-                        alt={glimpse.title}
-                        fill
-                        sizes="(max-width:768px) 100vw, 50vw"
-                        className="object-cover rounded-lg"
-                      />
+                        <Image
+                          src={src}
+                          alt={glimpse.title}
+                          fill
+                          priority={isVisible}
+                          sizes="(max-width:768px) 100vw, 50vw"
+                          className="object-cover rounded-lg"
+                        />
 
-                    </div>
+                      </div>
 
-                  ))}
+                    ))}
+
+                  </div>
+
+                  <div className="text-center mt-4">
+                    <p className="text-yellow-400 font-semibold text-lg">
+                      {glimpse.title}
+                    </p>
+                  </div>
 
                 </div>
-
-                <div className="text-center mt-4">
-                  <p className="text-yellow-400 font-semibold text-lg">
-                    {glimpse.title}
-                  </p>
-                </div>
-
-              </div>
-
-            ))}
+              );
+            })}
 
           </div>
 

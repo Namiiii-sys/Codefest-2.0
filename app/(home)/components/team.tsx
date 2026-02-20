@@ -12,16 +12,17 @@ type TeamMember = {
   image: string;
   linkedin: string;
   objectPosition?: string;
+  scale?: number;
 };
 
 const team: TeamMember[] = [
-  { name: "Namita Mehra", role: "Lead Organiser", image: "/namita.jpg", linkedin: "https://www.linkedin.com/in/namita-mh/", objectPosition: "center 20%" },
+  { name: "Namita Mehra", role: "Lead Organiser", image: "/namita.jpg", linkedin: "https://www.linkedin.com/in/namita-mh/", objectPosition: "0% 70%", scale: 1.1 },
   { name: "Shubhangi Maurya", role: "Lead Organiser", image: "/shubhangi.jpg", linkedin: "#" },
   { name: "Shambhavi Sharma", role: "Organiser", image: "/shambhavi.jpg", linkedin: "https://www.linkedin.com/in/shambhavi-sharma-822567328/" },
   { name: "Yajjat", role: "Organiser", image: "/Yajjat.jpg", linkedin: "#" },
   { name: "Ronak", role: "Organiser", image: "/ronak.jpg", linkedin: "https://www.linkedin.com/in/ronak-choudhary-bb855b327/" },
   { name: "Disha", role: "Organiser", image: "/disha.jpg", linkedin: "https://www.linkedin.com/in/disha-v-7696002a0/" },
-  { name: "Aditi", role: "Organiser", image: "/aditi.jpg", linkedin: "https://www.linkedin.com/in/aditi-sharma-626081290/" },
+  // { name: "Aditi", role: "Organiser", image: "/aditi.jpg", linkedin: "https://www.linkedin.com/in/aditi-sharma-626081290/" },
   { name: "Aniket Anand", role: "Organiser", image: "/aniket.png", linkedin: "https://www.linkedin.com/in/anand-aniket11/" },
   { name: "Organising Committee Member", role: "Organiser", image: "/ocs.jpg", linkedin: "#" },
 
@@ -42,7 +43,16 @@ function TeamBubble({ member }: { member: TeamMember }) {
           shadow-2xl
         "
       >
-        <Image src={member.image} alt={member.name} fill className="object-cover" style={{ objectPosition: member.objectPosition || 'center' }} />
+        <Image
+          src={member.image}
+          alt={member.name}
+          fill
+          className="object-cover"
+          style={{
+            objectPosition: member.objectPosition || 'center',
+            transform: `scale(${member.scale || 1})`
+          }}
+        />
       </div>
 
       <p className="text-white font-semibold mt-3 text-center">{member.name}</p>
