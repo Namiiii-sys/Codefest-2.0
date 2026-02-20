@@ -81,22 +81,22 @@ export default function SponsorsSection() {
 
   // unified empty sponsor boxes
   const sponsors = [
-  {
-    src: "", 
-    alt: "",
-    link: "",
-  },
-  {
-    src: "/sponsors/qodeml.png",   // sponsor image
-    alt: "QodeML Labs",
-    link: "https://www.instagram.com/qodeml.labs?igsh=MzBqdXF5d3lidmY3",     // sponsor website
-  },
-  {
-    src: "",
-    alt: "",
-    link: "",
-  },
-];
+    {
+      src: "",
+      alt: "",
+      link: "",
+    },
+    {
+      src: "/sponsors/qodeml.png",   // sponsor image
+      alt: "QodeML Labs",
+      link: "https://www.instagram.com/qodeml.labs?igsh=MzBqdXF5d3lidmY3",     // sponsor website
+    },
+    {
+      src: "",
+      alt: "",
+      link: "",
+    },
+  ];
 
 
   return (
@@ -123,6 +123,19 @@ export default function SponsorsSection() {
             ))}
           </div>
 
+
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-neutral-400 text-lg">
+            Interested in sponsoring us?{" "}
+            <a
+              href="mailto:acm-chapter@sscbs.du.ac.in"
+              className="text-yellow-500 font-bold hover:underline transition-all"
+            >
+              Get in touch
+            </a>
+          </p>
         </div>
 
       </div>

@@ -28,7 +28,6 @@ export default function Home() {
       <TempleRopeTimeline />
       <AboutSection />
       <Glimpses/>
-      <PrizesSection/>
       <SponsorsSection />
       <MeetTheTeam/>
       {/* <Mentors/> */}

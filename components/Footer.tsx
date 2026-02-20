@@ -66,7 +66,7 @@ export default function Footer() {
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-yellow-400" />
                   <Link href="mailto:acm-chapter@sscbs.du.ac.in" className="text-sm hover:text-yellow-400">
-                   acm-chapter@sscbs.du.ac.in
+                    acm-chapter@sscbs.du.ac.in
                   </Link>
                 </div>
 
@@ -130,15 +130,35 @@ export default function Footer() {
               </div>
               <div className="flex justify-center">
                 <Link
-                href="https://chat.whatsapp.com/JF2nNw3KGQAAAZmDtzdQv8?mode=gi_t"
-                target="_blank"
-                className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-700 px-6 py-2.5 rounded-lg text-sm"
-              >
-                <ChartBarIcon size={16} />
-                Connect on WhatsApp
-              </Link>
+                  href="https://chat.whatsapp.com/JF2nNw3KGQAAAZmDtzdQv8?mode=gi_t"
+                  target="_blank"
+                  className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-700 px-6 py-2.5 rounded-lg text-sm"
+                >
+                  <ChartBarIcon size={16} />
+                  Connect on WhatsApp
+                </Link>
               </div>
-              
+
+            </div>
+
+            {/* Previous Editions */}
+            <div className="space-y-4">
+              <h3 className="text-yellow-400 font-semibold tracking-widest uppercase text-s">
+                Previous Editions
+              </h3>
+              <div className="flex justify-center flex-col items-center">
+                <Link
+                  href="https://codefest.acmsscbs.in/"
+                  target="_blank"
+                  className="text-sm hover:text-yellow-400 transition-colors flex items-center gap-2"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
+                  CodeFest 1.0 (2024)
+                </Link>
+                <p className="text-[10px] text-gray-500 mt-1 italic">
+                  Relive the first chapter of our legacy
+                </p>
+              </div>
             </div>
 
           </div>

@@ -42,7 +42,7 @@ export default function Hero() {
 
   return (
     <main className="w-full relative h-screen overflow-hidden bg-black">
-      {/* ✅ Background Video */}
+      {/*  Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
         src="/temp2.mp4"
@@ -59,6 +59,10 @@ export default function Hero() {
       {/* Overlay content */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-6 text-center">
         <Image src={"/LOGO.png"} alt="logo" height={80} width={800} priority />
+
+        <div className={`${cinzel.className} text-xl md:text-2xl text-yellow-300 tracking-[0.1em] font-bold uppercase`}>
+          27-28th March
+        </div>
 
         {/* Countdown */}
         <div className="flex gap-4 text-yellow-300 font-bold text-sm md:text-xl">
