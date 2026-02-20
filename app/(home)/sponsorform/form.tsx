@@ -52,10 +52,11 @@ const fields: Field[] = [
         required: true,
         options: [
             "Title Sponsor",
-            "Technology Partner",
-            "Event Partner",
+            "Platinum Sponsor",
+            "Gold Sponsor",
+            "Silver Sponsor",
+            "Bronze Sponsor",
             "General Sponsor",
-            "Other",
         ],
     },
     {
