@@ -31,7 +31,7 @@ export default function Home() {
       <PrizesSection/>
       <SponsorsSection />
       <MeetTheTeam/>
-      <Mentors/>
+      {/* <Mentors/> */}
       <FAQ/>
     </main>
   );

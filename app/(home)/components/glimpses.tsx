@@ -47,44 +47,19 @@ export default function Glimpses() {
 
   const [index, setIndex] = useState(1);
   const [animate, setAnimate] = useState(true);
-  const [ready, setReady] = useState(false);
-
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const next = () => setIndex((i) => i + 1);
   const prev = () => setIndex((i) => i - 1);
 
-  // preload guard
+  // auto rotate
   useEffect(() => {
-    const preload = async () => {
-      await Promise.all(
-        glimpses.flatMap(g =>
-          g.images.map(src => {
-            return new Promise(res => {
-              const img = new window.Image();
-              img.src = src;
-              img.onload = res;
-              img.onerror = res;
-            });
-          })
-        )
-      );
-      setReady(true);
-    };
-
-    preload();
-  }, []);
-
-  // auto rotate only after preload
-  useEffect(() => {
-    if (!ready) return;
-
     intervalRef.current = setInterval(next, 4000);
 
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [ready]);
+  }, []);
 
   // seamless reset
   const handleTransitionEnd = () => {
@@ -135,11 +110,10 @@ export default function Glimpses() {
 
               <div key={gIndex} className="w-full flex-shrink-0 px-1">
 
-                <div className={`grid gap-4 ${
-                  glimpse.images.length > 1
-                    ? "grid-cols-1 md:grid-cols-2"
-                    : "grid-cols-1"
-                }`}>
+                <div className={`grid gap-4 ${glimpse.images.length > 1
+                  ? "grid-cols-1 md:grid-cols-2"
+                  : "grid-cols-1"
+                  }`}>
 
                   {glimpse.images.map((src, i) => (
 
@@ -149,8 +123,7 @@ export default function Glimpses() {
                         src={src}
                         alt={glimpse.title}
                         fill
-                        priority
-                        sizes="(max-width:768px)100vw,50vw"
+                        sizes="(max-width:768px) 100vw, 50vw"
                         className="object-cover rounded-lg"
                       />
 
@@ -178,14 +151,14 @@ export default function Glimpses() {
           onClick={prev}
           className="absolute left-[-60px] top-1/2 -translate-y-1/2 bg-white/10 p-3 rounded-full"
         >
-          <ChevronLeft size={24}/>
+          <ChevronLeft size={24} />
         </button>
 
         <button
           onClick={next}
           className="absolute right-[-60px] top-1/2 -translate-y-1/2 bg-white/10 p-3 rounded-full"
         >
-          <ChevronRight size={24}/>
+          <ChevronRight size={24} />
         </button>
 
       </div>
