@@ -211,14 +211,13 @@ export default function PrizesSection() {
             Win Big. Build Bigger.
           </h2>
           <p className="mt-3 text-white/70 max-w-2xl mx-auto">
-            Compete across national-level challenges, individual events,
-            and special recognition categories.
+            Compete across diverse challenges, individual events, and special recognition categories.
           </p>
         </div>
 
         {/* MAIN HACKATHON PRIZES */}
         <PrizeSection
-          title="National Hackathon Winners"
+          title="Official Hackathon Winners"
           subtitle="Top 3 teams across the entire hackathon"
         >
           {mainPrizes.map((p) => (
