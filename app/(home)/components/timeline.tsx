@@ -20,6 +20,10 @@ type Item = {
   short: string;
   time: string;
   long: string;
+  links?: {
+    name: string;
+    url: string;
+  }[];
 };
 
 const day1: Item[] = [
@@ -27,8 +31,30 @@ const day1: Item[] = [
     title: "Online Registration Starts",
     date: "",
     time: "on 20th Feb",
-    short: "<registration link>",
+    short: "Registration links:",
     long: "",
+    links: [
+      {
+        name: "Codefest 2.0",
+        url: "https://unstop.com/college-fests/cbs-codefest-20-acm-sscbs-442766",
+      },
+      {
+        name: "Web Auction",
+        url: "https://unstop.com/hackathons/web-auction-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645678",
+      },
+      {
+        name: "Code Phantom",
+        url: "https://unstop.com/hackathons/code-phantom-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645675",
+      },
+      {
+        name: "Design Apocalypse",
+        url: "https://unstop.com/hackathons/design-apocalypse-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645680",
+      },
+      {
+        name: "Blind Code",
+        url: "https://unstop.com/hackathons/blind-code-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645679",
+      },
+    ],
   },
   {
     title: "Online Registration Ends",
@@ -205,6 +231,38 @@ export default function TempleRopeTimeline() {
                 <p className="md:text-md text-sm text-neutral-200 leading-relaxed whitespace-pre-line">
                   {item.long}
                 </p>
+                {item.links && (
+                  <div className="mt-5">
+
+
+                    <div className="flex flex-wrap gap-2">
+                      {item.links.map((link, i) => (
+                        <a
+                          key={i}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="
+            px-3 py-1.5
+            text-xs md:text-sm
+            font-semibold
+            text-yellow-400
+            border border-yellow-500/40
+            rounded-md
+            hover:bg-yellow-500
+            hover:text-black
+            hover:shadow-[0_0_12px_rgba(250,204,21,0.6)]
+            transition-all
+            duration-200
+          "
+                        >
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+
+                  </div>
+                )}
               </div>
             </div>
           ))}

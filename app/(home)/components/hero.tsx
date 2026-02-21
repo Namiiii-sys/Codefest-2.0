@@ -79,7 +79,7 @@ export default function Hero() {
 
         <div className="flex flex-col md:flex-row md:gap-6">
           <Link
-            href="#timeline"
+            href="https://unstop.com/college-fests/cbs-codefest-20-acm-sscbs-442766" target="_blank"
             className="mt-6 py-3 px-8 text-lg font-semibold bg-yellow-500 text-black rounded-md shadow-lg transition-all hover:bg-yellow-500"
           >
             Register Now
