@@ -95,11 +95,11 @@ function TeamCarousel() {
       </button>
 
       <div className="overflow-hidden px-4" ref={emblaRef}>
-        <div className="flex touch-pan-y">
+        <div className="flex touch-pan-y h-full">
           {team.map((member, index) => (
-            <div key={index} className="flex-[0_0_82%] min-w-0 px-3">
-              <div className="bg-gradient-to-b from-neutral-900/80 to-black/80 border border-white/10 rounded-3xl p-8 flex flex-col items-center shadow-2xl">
-                <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.3)] mb-6">
+            <div key={index} className="flex-[0_0_82%] min-w-0 px-3 h-full">
+              <div className="bg-gradient-to-b from-neutral-900/80 to-black/80 border border-white/10 rounded-3xl p-6 flex flex-col items-center shadow-[0_0_30px_rgba(234,179,8,0.15)] min-h-[350px] h-full">
+                <div className="relative w-36 h-36 rounded-full overflow-hidden border-4 border-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.3)] mb-4 flex-shrink-0">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -111,18 +111,20 @@ function TeamCarousel() {
                     }}
                   />
                 </div>
-                <p className="text-white font-bold text-xl text-center mb-1">{member.name}</p>
-                <p className="text-yellow-500/90 text-sm font-medium tracking-wide mb-5 uppercase">{member.role}</p>
+                <div className="flex flex-col items-center flex-grow">
+                  <p className="text-white font-bold text-lg text-center mb-1">{member.name}</p>
+                  <p className="text-yellow-500/90 text-xs font-semibold tracking-wide mb-4 uppercase text-center">{member.role}</p>
+                </div>
 
                 {member.linkedin !== "#" && (
                   <a
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-white/60 hover:bg-yellow-500 hover:text-black hover:scale-110 transition-all border border-white/5"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-white/60 hover:bg-yellow-500 hover:text-black hover:scale-110 transition-all border border-white/5 mt-auto"
                     aria-label={`${member.name}'s LinkedIn Profile`}
                   >
-                    <Linkedin size={20} />
+                    <Linkedin size={18} />
                   </a>
                 )}
               </div>
