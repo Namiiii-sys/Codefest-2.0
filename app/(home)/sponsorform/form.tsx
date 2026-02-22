@@ -84,9 +84,7 @@ export default function SponsorInterestPage() {
         setLoading(true);
 
         try {
-            // BACKEND READY
-            // Replace with your API endpoint
-            await fetch("/api/sponsor-interest", {
+            const res = await fetch("/api/sponsor-interest", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -94,7 +92,12 @@ export default function SponsorInterestPage() {
                 body: JSON.stringify(formData),
             });
 
-            setSubmitted(true);
+            if (res.ok) {
+                setSubmitted(true);
+            } else {
+                const data = await res.json();
+                alert(data.message || "Something went wrong");
+            }
         } catch (err) {
             console.error(err);
             alert("Something went wrong");
