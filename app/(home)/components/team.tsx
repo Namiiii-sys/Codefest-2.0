@@ -58,13 +58,17 @@ function TeamBubble({ member }: { member: TeamMember }) {
       <p className="text-white font-semibold mt-3 text-center">{member.name}</p>
       <p className="text-white/60 text-xs">{member.role}</p>
 
-      <a
-        href={member.linkedin}
-        target="_blank"
-        className="text-yellow-400 mt-2 hover:scale-110 transition"
-      >
-        <Linkedin size={18} />
-      </a>
+      {member.linkedin !== "#" && (
+        <a
+          href={member.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-yellow-400 mt-2 hover:scale-110 transition p-1"
+          aria-label={`${member.name}'s LinkedIn Profile`}
+        >
+          <Linkedin size={18} />
+        </a>
+      )}
     </div>
   );
 }

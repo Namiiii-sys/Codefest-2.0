@@ -45,8 +45,6 @@ export default function Footer() {
                 <div className="flex gap-2.5 justify-center md:justify-start">
                   {[
                     { icon: Mail, href: "mailto:acm-chapter@sscbs.du.ac.in", label: "Mail" },
-                    { icon: Facebook, href: "https://share.google/lkMc8ERYB7hm9DwNx", label: "Facebook" },
-                    { icon: Twitter, href: "https://share.google/9EJg12CpWyxHgGyjS", label: "Twitter" },
                     { icon: Linkedin, href: "https://www.linkedin.com/company/acm-sscbs/", label: "LinkedIn" },
                     { icon: Instagram, href: "https://www.instagram.com/cbs_codefest/", label: "Instagram" },
                   ].map((social, i) => (
@@ -77,7 +75,7 @@ export default function Footer() {
             <div className="md:col-span-5 grid grid-cols-2 gap-6 md:gap-4 lg:gap-8">
               {/* Contact */}
               <div className="space-y-4">
-                <h3 className="text-yellow-400 font-bold tracking-widest uppercase text-[11px]">
+                <h3 className={`${cinzel.className} text-yellow-400 font-bold tracking-widest uppercase text-[11px]`}>
                   Contact Us
                 </h3>
                 <div className="space-y-5">
@@ -105,7 +103,7 @@ export default function Footer() {
               {/* Resources & Previous Editions */}
               <div className="flex flex-col space-y-6">
                 <div className="space-y-4">
-                  <h3 className="text-yellow-400 font-bold tracking-widest uppercase text-[11px]">
+                  <h3 className={`${cinzel.className} text-yellow-400 font-bold tracking-widest uppercase text-[11px]`}>
                     Quick Links
                   </h3>
                   <ul className="space-y-1.5 font-medium">
@@ -133,7 +131,7 @@ export default function Footer() {
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-yellow-400 font-bold tracking-widest uppercase text-[11px]">
+                  <h3 className={`${cinzel.className} text-yellow-400 font-bold tracking-widest uppercase text-[11px]`}>
                     Previous Edition
                   </h3>
                   <Link
@@ -150,7 +148,7 @@ export default function Footer() {
 
             {/* Column 3: Location (3/12) */}
             <div className="md:col-span-3 flex flex-col space-y-4">
-              <h3 className="text-yellow-400 font-bold tracking-widest uppercase text-[11px] text-center md:text-left">
+              <h3 className={`${cinzel.className} text-yellow-400 font-bold tracking-widest uppercase text-[11px] text-center md:text-left`}>
                 Location
               </h3>
               <div className="relative w-full h-36 rounded-xl overflow-hidden border border-white/5 ring-1 ring-yellow-500/10 group">

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "CodeFest 2.0 | Flagship Tech Fest of SSCBS",
+    default: "CodeFest 2.0 | The Annual Flagship Fest of SSCBS",
     template: "%s | CodeFest 2.0",
   },
 
@@ -30,17 +30,17 @@ export const metadata: Metadata = {
   ],
 
 
-  metadataBase: new URL("https://codefest26.acmsscbs.in"), 
+  metadataBase: new URL("https://codefest26.acmsscbs.in"),
 
   openGraph: {
-    title: "CodeFest 2.0 | Flagship Tech Fest of SSCBS",
+    title: "CodeFest 2.0 | The Annual Flagship Fest of SSCBS",
     description:
       "Join CodeFest 2.0 – a flagship tech fest with exciting coding events, innovation challenges, and real-world problem solving.",
     url: "https://codefest26.acmsscbs.in",
     siteName: "CodeFest 2.0",
     images: [
       {
-        url: "/LOGO.png", 
+        url: "/LOGO2.png",
         width: 1200,
         height: 630,
         alt: "CodeFest 2.0",
@@ -55,15 +55,33 @@ export const metadata: Metadata = {
     title: "CodeFest 2.0 | Flagship Tech Fest of SSCBS",
     description:
       "National-level hackathon & tech fest with coding competitions, design challenges, and innovation.",
-    images: ["/LOGO.png"],
+    images: ["/LOGO2.png"],
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 
   category: "technology",
+  icons: {
+    icon: "/LOGO2.png",
+    apple: "/LOGO2.png",
+  },
+};
+
+export const viewport = {
+  themeColor: "#eab308", // yellow-500
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -74,9 +92,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black text-white antialiased">
-        <Navbar/>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
