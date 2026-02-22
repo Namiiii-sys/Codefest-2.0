@@ -3,10 +3,8 @@ import PrizesFull from "./prizefull";
 function page() {
   return (
     <>
-    <PrizesFull>
-    </PrizesFull>
-    <PrizesSection>
-    </PrizesSection>
+    <PrizesFull/>
+     <PrizesSection/>
  </>
   )
 }

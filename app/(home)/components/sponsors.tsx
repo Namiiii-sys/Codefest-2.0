@@ -100,7 +100,7 @@ export default function SponsorsSection() {
 
 
   return (
-    <section className="bg-black py-20 px-6">
+    <section id="sponsors" className="bg-black py-20 px-6">
 
       <div className="mx-auto max-w-7xl">
 
@@ -130,7 +130,7 @@ export default function SponsorsSection() {
           <p className="text-neutral-400 text-lg">
             Interested in sponsoring us?{" "}
             <a
-              href="mailto:acm-chapter@sscbs.du.ac.in"
+              href="/sponsorform"
               className="text-yellow-500 font-bold hover:underline transition-all"
             >
               Get in touch
@@ -139,7 +139,8 @@ export default function SponsorsSection() {
         </div>
 
       </div>
-
+      
     </section>
+    
   );
 }

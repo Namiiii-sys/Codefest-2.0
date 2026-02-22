@@ -1,0 +1,20 @@
+# robots.txt for Codefest 2.0
+# Allow all bots to crawl the site
+
+User-agent: *
+Allow: /
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow private or admin pages if any
+# Uncomment and modify as needed
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://codefest26.acmsscbs.in/sitemap.xml

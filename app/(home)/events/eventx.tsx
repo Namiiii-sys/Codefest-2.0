@@ -13,25 +13,26 @@ export function TimelineDemo() {
         <div className="space-y-8">
 
           <EventBlock
-  title="Web Auction"
-  time="10:00 AM – 10:45 AM"
-  short="Live bidding for tech resources"
-  long={
-    <>
-      Teams strategically bid for tools, APIs, and constraints before development begins.
-      {" "}The event will take place in two parts{" "}
-      <span className="font-bold text-yellow-400">
-        Auction Phase
-      </span>{" "}
-      and{" "}
-      <span className="font-bold text-yellow-400">
-        Build Phase
-      </span>.
-      Team size: 2-4.
-    </>
-  }
-  prize="1st 3000, 2nd 1500, 3rd 500 per team"
-/>
+            title="Web Auction"
+            time="10:00 AM – 10:45 AM"
+            short="Live bidding for tech resources"
+            long={
+              <>
+                Teams strategically bid for tools, APIs, and constraints before development begins.
+                {" "}The event will take place in two parts{" "}
+                <span className="font-bold text-yellow-400">
+                  Auction Phase
+                </span>{" "}
+                and{" "}
+                <span className="font-bold text-yellow-400">
+                  Build Phase
+                </span>.
+                Team size: 2-4.
+              </>
+            }
+            prize="1st 3000, 2nd 1500, 3rd 500 per team"
+            link="https://unstop.com/hackathons/web-auction-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645678"
+          />
 
 
 
@@ -41,6 +42,7 @@ export function TimelineDemo() {
             short="Time-bound UI/UX sprint"
             long="Rapid design challenge focused on usability, creativity, and execution. Team size: 2-4."
             prize="1st 3000, 2nd 1500, 3rd 500 per team"
+            link="https://unstop.com/hackathons/design-apocalypse-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645680"
           />
 
           <EventBlock
@@ -49,6 +51,7 @@ export function TimelineDemo() {
             short="Logic-first coding challenge"
             long="Solve algorithmic problems without seeing test cases. Team size: Individual."
             prize="1st 3000, 2nd 1500, 3rd 500 per team"
+            link="https://unstop.com/hackathons/blind-code-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645679"
           />
 
           <EventBlock
@@ -57,6 +60,7 @@ export function TimelineDemo() {
             short="DSA competition"
             long="Efficiency-driven coding and deep problem-solving rounds.Team size: Individual."
             prize="1st 3000, 2nd 1500, 3rd 500 per team"
+            link="https://unstop.com/hackathons/code-phantom-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645675"
           />
         </div>
       ),
@@ -76,7 +80,7 @@ export function TimelineDemo() {
             <div className="relative z-10">
 
               <h4 className="text-yellow-400 font-extrabold text-3xl md:text-5xl tracking-wide">
-                12-Hour Offline Hackathon
+                12-Hour Offline Hackathon:  <span className="text-white"> ACE(M) HACK</span>
               </h4>
 
               <p className="text-yellow-400/80 font-semibold mt-3 text-lg">
@@ -138,6 +142,26 @@ export function TimelineDemo() {
                     Real-world relevance. Clarity of presentation.
                   </p>
                 </div>
+
+                <a
+                  href="https://unstop.com/college-fests/cbs-codefest-20-acm-sscbs-442766"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+    inline-block
+    mt-6
+    bg-yellow-500
+    hover:bg-yellow-400
+    text-black
+    font-bold
+    px-6 py-3
+    rounded-md
+    transition-all
+    hover:shadow-[0_0_18px_rgba(250,204,21,0.8)]
+  "
+                >
+                  Apply Now
+                </a>
 
               </div>
 
@@ -233,16 +257,18 @@ function EventBlock({
   time,
   long,
   prize,
+  link,
 }: {
   title: string;
   short: string;
   time: string;
   long: React.ReactNode;
   prize: string;
+  link?: string;
 }) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6">
-      
+
       <h4 className="text-yellow-400 font-extrabold text-2xl">
         {title}
       </h4>
@@ -265,6 +291,27 @@ function EventBlock({
         <p className="text-yellow-400 font-semibold text-md mt-4">
           {prize}
         </p>
+      )}
+      {link && (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+      inline-block
+      mt-5
+      bg-yellow-500
+      hover:bg-yellow-400
+      text-black
+      font-semibold
+      px-5 py-2
+      rounded-md
+      transition-all
+      hover:shadow-[0_0_16px_rgba(250,204,21,0.7)]
+    "
+        >
+          Apply Now
+        </a>
       )}
 
     </div>

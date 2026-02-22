@@ -20,6 +20,7 @@ type Item = {
   short: string;
   time: string;
   long: string;
+  link?: string;
 };
 
 const day1: Item[] = [
@@ -27,22 +28,24 @@ const day1: Item[] = [
     title: "Online Registration Starts",
     date: "",
     time: "on 20th Feb",
-    short: "<registration link>",
+    short: "Register now",
     long: "",
+    link: "https://unstop.com/college-fests/cbs-codefest-20-acm-sscbs-442766",
   },
   {
     title: "Online Registration Ends",
     date: "",
-    time: "on 15th march",
-    short: "Last chance to register for Codefest 2.0",
+    time: "on 15th March",
+    short: "Last chance to register for CodeFest 2.0",
     long: "",
   },
   {
     title: "Web Auction",
     date: "DAY 1: 27th March",
-    time: "10:00 AM – 12:45 AM",
-    short: "Live bidding for tech resources and Development sprint",
-    long: "Teams strategically bid for tools, APIs, and constraints before development begins. And Teams develop websites using the auctioned assets.",
+    time: "10:00 AM – 12:45 PM",
+    short: "Live bidding and development sprint",
+    long: "Teams strategically bid for tools, APIs, and constraints before development begins. Teams develop websites using the auctioned assets.",
+    link: "https://unstop.com/hackathons/web-auction-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645678",
   },
   {
     title: "Design Apocalypse",
@@ -50,6 +53,7 @@ const day1: Item[] = [
     time: "01:00 PM – 02:30 PM",
     short: "Time-bound UI/UX sprint",
     long: "Rapid design challenge focused on usability, creativity, and execution.",
+    link: "https://unstop.com/hackathons/design-apocalypse-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645680",
   },
   {
     title: "Blind Code",
@@ -57,6 +61,7 @@ const day1: Item[] = [
     time: "02:45 PM – 04:15 PM",
     short: "Logic-first coding challenge",
     long: "Solve algorithmic problems without seeing test cases.",
+    link: "https://unstop.com/hackathons/blind-code-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645679",
   },
   {
     title: "Code Phantom",
@@ -64,8 +69,10 @@ const day1: Item[] = [
     time: "04:30 PM – 06:00 PM",
     short: "DSA competition",
     long: "Efficiency-driven coding and deep problem-solving rounds.",
+    link: "https://unstop.com/hackathons/code-phantom-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645675",
   },
 ];
+
 
 const day2: Item[] = [
   {
@@ -74,6 +81,7 @@ const day2: Item[] = [
     time: "09:30 AM – 07:00 PM ",
     short: "Official start",
     long: "Problem statements revealed and development begins.",
+    link: "https://unstop.com/college-fests/cbs-codefest-20-acm-sscbs-442766",
   },
 ];
 
@@ -189,17 +197,74 @@ export default function TempleRopeTimeline() {
             >
               <div className="md:w-[42%] w-full max-w-xl bg-black border border-yellow-700/40 rounded-xl p-4 md:p-6 shadow-lg">
                 <div className="flex items-center justify-between mb-2 gap-4">
-                  <h3 className="text-lg md:text-xl font-semibold text-yellow-400">
-                    {item.title}
-                  </h3>
+                  {item.link ? (
+                    item.title.toLowerCase().includes("registration") ? (
+                      <h3 className="text-lg md:text-xl font-semibold text-yellow-400">
+                        {item.title}
+                      </h3>
+                    ) : (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="
+        text-lg md:text-xl font-semibold text-yellow-400
+        hover:text-yellow-300 hover:underline
+        transition cursor-pointer
+      "
+                      >
+                        {item.title}
+                      </a>
+                    )
+                  ) : (
+                    <h3 className="text-lg md:text-xl font-semibold text-yellow-400">
+                      {item.title}
+                    </h3>
+                  )}
                   <span className="text-s font-bold text-white-900 whitespace-nowrap">
                     {item.date}
                   </span>
                 </div>
 
                 <p className="text-sm text-neutral-300 mb-3">{item.time}</p>
-                <p className="text-sm text-neutral-300 mb-3">{item.short}</p>
+                {item.link ? (
+                  !item.title.toLowerCase().includes("registration") ? (
+                    <p className="text-sm text-neutral-300 mb-3">
+                    {item.short}
+                  </p>
 
+                  ) : (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+      inline-block
+      mb-3
+      border border-yellow-500/40
+      bg-yellow-500/10
+      hover:bg-yellow-500/20
+      hover:border-yellow-400
+
+      text-yellow-400
+      hover:text-yellow-300
+
+      font-semibold text-sm
+      px-4 py-1
+
+      rounded-lg
+
+      transition-all duration-200
+    "
+                    >
+                      {item.short}
+                    </a>
+                  )
+                ) : (
+                  <p className="text-sm text-neutral-300 mb-3">
+                    {item.short}
+                  </p>
+                )}
                 <div className="w-12 h-[1px] bg-yellow-600 mb-3" />
 
                 <p className="md:text-md text-sm text-neutral-200 leading-relaxed whitespace-pre-line">
