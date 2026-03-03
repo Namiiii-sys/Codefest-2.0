@@ -30,7 +30,7 @@ export function TimelineDemo() {
                 Team size: 2-4.
               </>
             }
-            prize="1st 3000, 2nd 1500, 3rd 500 per team"
+            prize="5k+ Prize Pool"
             link="https://unstop.com/hackathons/web-auction-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645678"
           />
 
@@ -41,7 +41,7 @@ export function TimelineDemo() {
             time="01:00 PM – 02:30 PM"
             short="Time-bound UI/UX sprint"
             long="Rapid design challenge focused on usability, creativity, and execution. Team size: 2-4."
-            prize="1st 3000, 2nd 1500, 3rd 500 per team"
+            prize="5k+ Prize Pool"
             link="https://unstop.com/hackathons/design-apocalypse-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645680"
           />
 
@@ -50,7 +50,7 @@ export function TimelineDemo() {
             time="02:45 PM – 04:15 PM"
             short="Logic-first coding challenge"
             long="Solve algorithmic problems without seeing test cases. Team size: Individual."
-            prize="1st 3000, 2nd 1500, 3rd 500 per team"
+            prize="5k+ Prize Pool"
             link="https://unstop.com/hackathons/blind-code-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645679"
           />
 
@@ -59,7 +59,7 @@ export function TimelineDemo() {
             time="04:30 PM – 06:00 PM"
             short="DSA competition"
             long="Efficiency-driven coding and deep problem-solving rounds.Team size: Individual."
-            prize="1st 3000, 2nd 1500, 3rd 500 per team"
+            prize="5k+ Prize Pool"
             link="https://unstop.com/hackathons/code-phantom-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645675"
           />
         </div>
