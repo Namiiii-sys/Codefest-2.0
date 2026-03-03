@@ -22,6 +22,7 @@ const team: TeamMember[] = [
   { name: "Yajjat", role: "Organiser", image: "/Yajjat.jpg", linkedin: "#" },
   { name: "Ronak", role: "Organiser", image: "/ronak.jpg", linkedin: "https://www.linkedin.com/in/ronak-choudhary-bb855b327/" },
   { name: "Disha", role: "Organiser", image: "/disha.jpg", linkedin: "https://www.linkedin.com/in/disha-v-7696002a0/" },
+  { name: "Ishika Mandhar", role: "Organiser", image: "/ishika.jpg", linkedin: "https://www.linkedin.com/in/ishika386/" },
   // { name: "Aditi", role: "Organiser", image: "/aditi.jpg", linkedin: "https://www.linkedin.com/in/aditi-sharma-626081290/" },
   { name: "Aniket Anand", role: "Organiser", image: "/aniket.png", linkedin: "https://www.linkedin.com/in/anand-aniket11/" },
   { name: "Organising Committee Member", role: "Organiser", image: "/ocs.jpg", linkedin: "#" },
