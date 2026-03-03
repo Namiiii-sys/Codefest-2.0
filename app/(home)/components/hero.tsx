@@ -85,7 +85,7 @@ export default function Hero() {
             Register Now
           </Link>
           <Link
-            href="#timeline"
+            href="/events"
             className="mt-6 py-3 px-8 text-lg font-semibold border border-white/30 text-white rounded-md shadow-lg transition-all hover:border-yellow-500"
           >
             Begin Your Quest

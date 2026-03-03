@@ -30,9 +30,6 @@ export default function AboutSection() {
             Expanding into a two-day format this year, CodeFest 2.0 culminates in a 12-hour hackathon that emphasizes prototype development, scalability, and presentation. Through mentorship, expert judging, and a competitive yet collaborative environment, the event strives to bridge the gap between academic learning and real-world innovation.
           </p>
 
-          <p className="text-yellow-400 text-center text-lg md:text-2xl font-extrabold tracking-wide py-4">
-            "The 12-Hour Sprint to Innovation"
-          </p>
         </div>
 
 
@@ -83,15 +80,6 @@ export default function AboutSection() {
               <span className="block text-xs md:text-sm text-neutral-400 font-bold uppercase tracking-widest">Prize Pool</span>
             </div>
           </div>
-
-          {/* Card 4
-          <div className="relative group">
-            <div className="absolute inset-0 bg-yellow-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
-            <div className="relative bg-neutral-900/50 border border-white/10 rounded-xl p-6 md:p-8 text-center backdrop-blur-sm hover:border-yellow-500/30 transition-all">
-              <span className="block text-3xl md:text-5xl font-black text-yellow-500 mb-2">5</span>
-              <span className="block text-xs md:text-sm text-neutral-400 font-bold uppercase tracking-widest">Sponsors</span>
-            </div>
-          </div> */}
 
         </div>
       </div>

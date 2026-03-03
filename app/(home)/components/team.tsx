@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Linkedin } from "lucide-react";
-
-
+import { Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 type TeamMember = {
   name: string;
@@ -18,18 +18,14 @@ type TeamMember = {
 const team: TeamMember[] = [
   { name: "Namita Mehra", role: "Lead Organiser", image: "/namita.jpg", linkedin: "https://www.linkedin.com/in/namita-mh/", objectPosition: "0% 70%", scale: 1.1 },
   { name: "Shubhangi Maurya", role: "Lead Organiser", image: "/shubhangi.jpg", linkedin: "#" },
-  { name: "Shambhavi Sharma", role: "Organiser", image: "/shambhavi.jpg", linkedin: "https://www.linkedin.com/in/shambhavi-sharma-822567328/" },
-  { name: "Yajjat", role: "Organiser", image: "/Yajjat.jpg", linkedin: "#" },
-  { name: "Ronak", role: "Organiser", image: "/ronak.jpg", linkedin: "https://www.linkedin.com/in/ronak-choudhary-bb855b327/" },
-  { name: "Disha", role: "Organiser", image: "/disha.jpg", linkedin: "https://www.linkedin.com/in/disha-v-7696002a0/" },
+  { name: "Shambhavi Sharma", role: "Organiser", image: "/shambhavi.jpg", linkedin: "https://www.linkedin.com/in/shambhavi-sharma-822567328/" }, 
   { name: "Ishika Mandhar", role: "Organiser", image: "/ishika.jpg", linkedin: "https://www.linkedin.com/in/ishika386/" },
-  // { name: "Aditi", role: "Organiser", image: "/aditi.jpg", linkedin: "https://www.linkedin.com/in/aditi-sharma-626081290/" },
+  { name: "Yajjat Ailawadi", role: "Organiser", image: "/Yajjat.jpg", linkedin: "#" },
+  { name: "Ronak Choudhary", role: "Organiser", image: "/ronak.jpg", linkedin: "https://www.linkedin.com/in/ronak-choudhary-bb855b327/" },
+  { name: "Disha Verma", role: "Organiser", image: "/disha.jpg", linkedin: "https://www.linkedin.com/in/disha-v-7696002a0/" },
   { name: "Aniket Anand", role: "Organiser", image: "/aniket.png", linkedin: "https://www.linkedin.com/in/anand-aniket11/" },
   { name: "Organising Committee Member", role: "Organiser", image: "/ocs.jpg", linkedin: "#" },
-
 ];
-
-
 
 function TeamBubble({ member }: { member: TeamMember }) {
   return (
@@ -56,26 +52,94 @@ function TeamBubble({ member }: { member: TeamMember }) {
         />
       </div>
 
-      <p className="text-white font-semibold mt-3 text-center">{member.name}</p>
-      <p className="text-white/60 text-xs">{member.role}</p>
+      <p className="text-md text-white font-semibold mt-3 text-center">{member.name}</p>
+      <p className="text-white/60 text-xs text-center">{member.role}</p>
 
-      <a
-        href={member.linkedin}
-        target="_blank"
-        className="text-yellow-400 mt-2 hover:scale-110 transition"
-      >
-        <Linkedin size={18} />
-      </a>
+      {member.linkedin !== "#" && (
+        <a
+          href={member.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-yellow-400 mt-2 hover:scale-110 transition p-1"
+          aria-label={`${member.name}'s LinkedIn Profile`}
+        >
+          <Linkedin size={18} />
+        </a>
+      )}
     </div>
   );
 }
 
+function TeamCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center", skipSnaps: false }, [Autoplay({ delay: 3500, stopOnInteraction: true })]);
 
+  const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
+  const scrollNext = () => emblaApi && emblaApi.scrollNext();
+
+  return (
+    <div className="md:hidden relative group">
+      {/* Navigation Buttons */}
+      <button
+        onClick={scrollPrev}
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-2 bg-black/40 backdrop-blur-md border border-white/10 rounded-full text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all active:scale-90"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft size={24} />
+      </button>
+
+      <button
+        onClick={scrollNext}
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-2 bg-black/40 backdrop-blur-md border border-white/10 rounded-full text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all active:scale-90"
+        aria-label="Next slide"
+      >
+        <ChevronRight size={24} />
+      </button>
+
+      <div className="overflow-hidden px-4" ref={emblaRef}>
+        <div className="flex touch-pan-y h-full">
+          {team.map((member, index) => (
+            <div key={index} className="flex-[0_0_82%] min-w-0 px-3 h-full">
+              <div className="bg-gradient-to-b from-neutral-900/80 to-black/80 border border-white/10 rounded-3xl p-6 flex flex-col items-center shadow-[0_0_30px_rgba(234,179,8,0.15)] min-h-[350px] h-full">
+                <div className="relative w-36 h-36 rounded-full overflow-hidden border-4 border-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.3)] mb-4 flex-shrink-0">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                    style={{
+                      objectPosition: member.objectPosition || 'center',
+                      transform: `scale(${member.scale || 1})`
+                    }}
+                  />
+                </div>
+                <div className="flex flex-col items-center flex-grow">
+                  <p className="text-white font-bold text-lg text-center mb-1">{member.name}</p>
+                  <p className="text-yellow-500/90 text-xs font-semibold tracking-wide mb-4 uppercase text-center">{member.role}</p>
+                </div>
+
+                {member.linkedin !== "#" && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-white/60 hover:bg-yellow-500 hover:text-black hover:scale-110 transition-all border border-white/5 mt-auto"
+                    aria-label={`${member.name}'s LinkedIn Profile`}
+                  >
+                    <Linkedin size={18} />
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function TeamFloatingSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // reactive mobile (instead of reading window inside render/loop)
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const update = () => setIsMobile(window.innerWidth < 768);
@@ -84,14 +148,10 @@ export default function TeamFloatingSection() {
     return () => window.removeEventListener("resize", update);
   }, []);
 
-  // state only for render, ref for ultra-fast updates
   const [scrollProgress, setScrollProgress] = useState(0);
   const progressRef = useRef(0);
-
-  // RAF throttle (single render per frame max)
   const rafRef = useRef<number | null>(null);
 
-  // Attach wheel listener ONCE (no dependency on scrollProgress)
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -109,7 +169,6 @@ export default function TeamFloatingSection() {
 
     const handleWheel = (e: WheelEvent) => {
       const rect = section.getBoundingClientRect();
-
       const inView =
         rect.top <= window.innerHeight * 0.25 &&
         rect.bottom >= window.innerHeight * 0.75;
@@ -118,7 +177,6 @@ export default function TeamFloatingSection() {
 
       const delta = e.deltaY * 0.02;
 
-      // if at ends, let normal scroll happen
       if ((delta > 0 && progressRef.current >= 100) || (delta < 0 && progressRef.current <= 0)) {
         return;
       }
@@ -140,9 +198,8 @@ export default function TeamFloatingSection() {
     let d = "";
 
     const bubbleRadius = 90;
-    const ropeWidth = isMobile ? 1200 : 1000;
-    const ropepathoffset = isMobile ? 22 : 13;
-    const ropeYOffset = isMobile ? 100 : 0;
+    const ropeWidth = 1000;
+    const ropepathoffset = 13;
 
     for (let i = 0; i <= points; i++) {
       const xPercent = (i / points) * 100;
@@ -150,34 +207,39 @@ export default function TeamFloatingSection() {
 
       const x = (xPercent / 100) * ropeWidth;
       const r = 2;
-      const y = (yPercent / 100) * 450 - bubbleRadius * r - ropeYOffset;
+      const y = (yPercent / 100) * 450 - bubbleRadius * r;
 
       d += i === 0 ? `M ${x} ${y}` : ` L ${x} ${y}`;
     }
 
     return d;
-  }, [isMobile]);
+  }, []);
 
   return (
-    <section ref={sectionRef} className="min-h-screen bg-black py-24 relative overflow-hidden" id="team">
-      <h2 className="text-center text-4xl font-bold text-white mb-20">Meet the Team</h2>
+    <section ref={sectionRef} className="min-h-[60vh] md:min-h-screen bg-black py-20 relative overflow-hidden" id="team">
+      <h2 className="text-center text-4xl font-bold text-white mb-12 md:mb-20 uppercase tracking-widest">
+        Meet the Team
+      </h2>
 
-      <div className="relative h-[520px] overflow-hidden">
+      {/* Mobile Swipe Section */}
+      <TeamCarousel />
+
+      {/* Desktop Rope Section */}
+      <div className="hidden md:block relative h-[520px] overflow-hidden">
         {/* Rope */}
         <svg
-          style={{ transform: `rotate(${isMobile ? 8 : 7}deg)` }}
+          style={{ transform: `rotate(7deg)` }}
           className="absolute inset-0 w-full h-full pointer-events-none opacity-95 origin-center"
           viewBox="0 0 1200 500"
           preserveAspectRatio="xMidYMid meet"
         >
           <defs>
             <linearGradient id="rope3d" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#fde68a" />  {/* yellow-300 */}
-              <stop offset="35%" stopColor="#facc15" /> {/* yellow-400 */}
-              <stop offset="50%" stopColor="#eab308" /> {/* yellow-500 (bright core) */}
-              <stop offset="65%" stopColor="#facc15" /> {/* yellow-400 */}
-              <stop offset="100%" stopColor="#fde68a" />{/* yellow-300 */}
-
+              <stop offset="0%" stopColor="#fde68a" />
+              <stop offset="35%" stopColor="#facc15" />
+              <stop offset="50%" stopColor="#eab308" />
+              <stop offset="65%" stopColor="#facc15" />
+              <stop offset="100%" stopColor="#fde68a" />
             </linearGradient>
 
             <filter id="ropeShadow" x="-50%" y="-50%" width="200%" height="200%">
@@ -197,54 +259,17 @@ export default function TeamFloatingSection() {
           <path d={ropePath} fill="none" stroke="#f3d9ac" strokeWidth="1.3" strokeDasharray="1.2 7" opacity="0.18" />
         </svg>
 
-        {/* Mobile Prev/Next */}
-        <div className="md:hidden flex justify-center gap-6 mt-8">
-          <button
-            disabled={scrollProgress <= 2}
-            onClick={() => {
-              const next = Math.max(0, progressRef.current - 18);
-              progressRef.current = next;
-              setScrollProgress(next);
-            }}
-            className="
-              px-6 py-3 rounded-lg font-semibold transition-all duration-200
-              bg-yellow-500 text-black hover:bg-yellow-400
-              disabled:bg-neutral-700 disabled:text-neutral-400 disabled:cursor-not-allowed disabled:shadow-none
-            "
-          >
-            ← Prev
-          </button>
-
-          <button
-            disabled={scrollProgress >= 98}
-            onClick={() => {
-              const next = Math.min(100, progressRef.current + 18);
-              progressRef.current = next;
-              setScrollProgress(next);
-            }}
-            className="
-              px-6 py-3 rounded-lg font-semibold transition-all duration-200
-              bg-yellow-500 text-black hover:bg-yellow-400
-              disabled:bg-neutral-700 disabled:text-neutral-400 disabled:cursor-not-allowed disabled:shadow-none
-            "
-          >
-            Next →
-          </button>
-        </div>
-
         {/* Bubbles */}
         {team.map((member, index) => {
           const spacing = 32;
           const totalWidth = (team.length - 1) * spacing;
-          const scrollRange = totalWidth; // extra padding for last bubble
+          const scrollRange = totalWidth;
 
           const xPercent =
             50 + index * spacing - (scrollProgress / 100) * scrollRange;
           const yPercent = 45 + Math.sin((xPercent / 100) * Math.PI) * 12;
 
-          const growth = isMobile ? 0.6 : 1.0;
-          const scale = 0.6 + ((100 - xPercent) / 100) * growth;
-
+          const scale = 0.6 + ((100 - xPercent) / 100) * 1.0;
           const visible = xPercent > -20 && xPercent < 120;
 
           return (
@@ -256,7 +281,7 @@ export default function TeamFloatingSection() {
                 top: `${yPercent}%`,
                 transform: `translate3d(-50%, -50%, 0) scale(${scale})`,
                 opacity: visible ? 1 : 0,
-                transition: "opacity 180ms ease-out", // avoid transition-all for scroll-driven transforms
+                transition: "opacity 180ms ease-out",
                 willChange: "transform, opacity",
                 zIndex: Math.round(scale * 10),
               }}
@@ -267,8 +292,8 @@ export default function TeamFloatingSection() {
         })}
       </div>
 
-      {/* Progress */}
-      <div className="flex justify-center mt-12">
+      {/* Progress - Desktop only */}
+      <div className="hidden md:flex justify-center mt-12">
         <div className="w-44 h-2 bg-white/10 rounded-full overflow-hidden">
           <div className="h-full bg-yellow-500 transition-all duration-200" style={{ width: `${scrollProgress}%` }} />
         </div>

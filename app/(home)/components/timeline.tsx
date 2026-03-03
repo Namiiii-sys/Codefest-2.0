@@ -12,7 +12,6 @@ const cinzel = Cinzel({
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ---------------- DATA ---------------- */
 
 type Item = {
   title: string;
@@ -60,7 +59,7 @@ const day1: Item[] = [
     date: "DAY 1: 27th March",
     time: "02:45 PM – 04:15 PM",
     short: "Logic-first coding challenge",
-    long: "Solve algorithmic problems without seeing test cases.",
+    long: "Solve algorithmic problems without seeing the monitor.",
     link: "https://unstop.com/hackathons/blind-code-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645679",
   },
   {
@@ -195,87 +194,58 @@ export default function TempleRopeTimeline() {
               className={`relative flex ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"} justify-center`}
               style={{ marginTop: index === 0 ? "10px" : gap }}
             >
-              <div className="md:w-[42%] w-full max-w-xl bg-black border border-yellow-700/40 rounded-xl p-4 md:p-6 shadow-lg">
-                <div className="flex items-center justify-between mb-2 gap-4">
-                  {item.link ? (
-                    item.title.toLowerCase().includes("registration") ? (
-                      <h3 className="text-lg md:text-xl font-semibold text-yellow-400">
-                        {item.title}
-                      </h3>
-                    ) : (
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="
-        text-lg md:text-xl font-semibold text-yellow-400
-        hover:text-yellow-300 hover:underline
-        transition cursor-pointer
-      "
-                      >
-                        {item.title}
-                      </a>
-                    )
-                  ) : (
-                    <h3 className="text-lg md:text-xl font-semibold text-yellow-400">
-                      {item.title}
-                    </h3>
-                  )}
-                  <span className="text-s font-bold text-white-900 whitespace-nowrap">
-                    {item.date}
-                  </span>
+              {item.link ? (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group md:w-[42%] w-full max-w-xl bg-black border border-yellow-700/40 rounded-xl p-4 md:p-6 shadow-lg hover:border-yellow-500/60 hover:shadow-yellow-500/5 transition-all duration-300 block cursor-pointer"
+                >
+                  <CardContent item={item} />
+                </a>
+              ) : (
+                <div className="md:w-[42%] w-full max-w-xl bg-black border border-yellow-700/40 rounded-xl p-4 md:p-6 shadow-lg">
+                  <CardContent item={item} />
                 </div>
-
-                <p className="text-sm text-neutral-300 mb-3">{item.time}</p>
-                {item.link ? (
-                  !item.title.toLowerCase().includes("registration") ? (
-                    <p className="text-sm text-neutral-300 mb-3">
-                    {item.short}
-                  </p>
-
-                  ) : (
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="
-      inline-block
-      mb-3
-      border border-yellow-500/40
-      bg-yellow-500/10
-      hover:bg-yellow-500/20
-      hover:border-yellow-400
-
-      text-yellow-400
-      hover:text-yellow-300
-
-      font-semibold text-sm
-      px-4 py-1
-
-      rounded-lg
-
-      transition-all duration-200
-    "
-                    >
-                      {item.short}
-                    </a>
-                  )
-                ) : (
-                  <p className="text-sm text-neutral-300 mb-3">
-                    {item.short}
-                  </p>
-                )}
-                <div className="w-12 h-[1px] bg-yellow-600 mb-3" />
-
-                <p className="md:text-md text-sm text-neutral-200 leading-relaxed whitespace-pre-line">
-                  {item.long}
-                </p>
-              </div>
+              )}
             </div>
           ))}
         </div>
 
       </div>
     </section>
+  );
+}
+
+function CardContent({ item }: { item: Item }) {
+  return (
+    <>
+      <div className="flex items-center justify-between mb-2 gap-4">
+        <h3 className="text-lg md:text-xl font-semibold text-yellow-400 group-hover:text-yellow-300 transition-colors">
+          {item.title}
+        </h3>
+        <span className="text-xs font-bold text-gray-400 whitespace-nowrap">
+          {item.date}
+        </span>
+      </div>
+
+      <p className="text-sm text-neutral-400 mb-3 font-medium">{item.time}</p>
+
+      {item.link && item.title.toLowerCase().includes("registration") ? (
+        <span className="inline-block mb-3 border border-yellow-500/40 bg-yellow-500/10 group-hover:bg-yellow-500/20 group-hover:border-yellow-400 text-yellow-400 group-hover:text-yellow-300 font-semibold text-sm px-4 py-1 rounded-lg transition-all duration-200">
+          {item.short}
+        </span>
+      ) : (
+        <p className="text-sm text-neutral-300 mb-3">
+          {item.short}
+        </p>
+      )}
+
+      <div className="w-12 h-[1px] bg-yellow-600/50 mb-3 group-hover:w-20 transition-all duration-500" />
+
+      <p className="md:text-md text-sm text-neutral-300 leading-relaxed whitespace-pre-line">
+        {item.long}
+      </p>
+    </>
   );
 }
