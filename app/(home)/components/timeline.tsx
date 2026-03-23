@@ -68,7 +68,7 @@ const day1: Item[] = [
 const day2: Item[] = [
   {
     title: "Hackathon Kick-off",
-    date: "10th March",
+    date: "10th April",
     time: "09:00 AM – 07:00 PM ",
     short: "Official start",
     long: "Problem statements revealed and development begins.",

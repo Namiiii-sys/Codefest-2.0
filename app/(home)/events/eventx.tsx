@@ -8,7 +8,7 @@ import { Timeline } from "@/components/ui/timeline";
 export function TimelineDemo() {
   const data = [
     {
-      title: "DAY - 1",
+      title: "Comps",
       content: (
         <div className="space-y-8">
 
@@ -16,35 +16,35 @@ export function TimelineDemo() {
 
           <EventBlock
             title="Design Apocalypse"
-            time="09:00 AM – 05:00 AM"
+            time="09:00 AM – 05:00 PM"
             short="Time-bound UI/UX sprint"
             long="Rapid design challenge focused on usability, creativity, and execution. Team size: 2-4."
-            prize="1st 3000, 2nd 1500, 3rd 500 per team"
+            prize="5k+ Prize Pool"
             link="https://unstop.com/hackathons/design-apocalypse-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645680"
           />
 
           <EventBlock
             title="Blind Code"
-            time="09:00 AM – 05:00 AM"
+            time="09:00 AM – 05:00 PM"
             short="Logic-first coding challenge"
             long="Solve algorithmic problems without seeing test cases. Team size: Individual."
-            prize="1st 3000, 2nd 1500, 3rd 500 per team"
+            prize="5k+ Prize Pool"
             link="https://unstop.com/hackathons/blind-code-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645679"
           />
 
           <EventBlock
             title="Code Phantom"
-            time="09:00 AM – 05:00 AM"
+            time="09:00 AM – 05:00 PM"
             short="DSA competition"
             long="Efficiency-driven coding and deep problem-solving rounds.Team size: Individual."
-            prize="1st 3000, 2nd 1500, 3rd 500 per team"
+            prize="5k+ Prize Pool"
             link="https://unstop.com/hackathons/code-phantom-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645675"
           />
         </div>
       ),
     },
     {
-      title: "DAY - 2",
+      title: "Hackathon",
       content: (
         <div className="space-y-8">
 
