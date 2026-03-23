@@ -34,14 +34,14 @@ const day1: Item[] = [
   {
     title: "Online Registration Ends",
     date: "",
-    time: "4th for Hackathon and 6th for Comps",
+    time: "4th April for Hackathon and 6th April for Comps",
     short: "Last chance to register for CodeFest 2.0",
     long: "",
   },
   {
     title: "Design Apocalypse",
     date: "10th April",
-    time: "09:00 AM – 05:00 PM",
+    time: "02:00 PM – 04:00 PM",
     short: "Time-bound UI/UX sprint",
     long: "Rapid design challenge focused on usability, creativity, and execution.",
     link: "https://unstop.com/hackathons/design-apocalypse-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645680",
@@ -49,7 +49,7 @@ const day1: Item[] = [
   {
     title: "Blind Code",
     date: "10th April",
-    time: "09:00 AM – 05:00 PM",
+    time: "12:00 PM – 02:00 PM",
     short: "Logic-first coding challenge",
     long: "Solve algorithmic problems without seeing the monitor.",
     link: "https://unstop.com/hackathons/blind-code-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645679",
@@ -57,7 +57,7 @@ const day1: Item[] = [
   {
     title: "Code Phantom",
     date: "10th April",
-    time: "09:00 AM – 05:00 PM",
+    time: "10:00 AM – 12:00 PM",
     short: "DSA competition",
     long: "Efficiency-driven coding and deep problem-solving rounds.",
     link: "https://unstop.com/hackathons/code-phantom-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645675",

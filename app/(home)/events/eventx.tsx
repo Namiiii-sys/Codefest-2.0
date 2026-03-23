@@ -16,7 +16,7 @@ export function TimelineDemo() {
 
           <EventBlock
             title="Design Apocalypse"
-            time="09:00 AM – 05:00 PM"
+            time="02:00 PM – 04:00 PM"
             short="Time-bound UI/UX sprint"
             long="Rapid design challenge focused on usability, creativity, and execution. Team size: 2-4."
             prize="5k+ Prize Pool"
@@ -25,7 +25,7 @@ export function TimelineDemo() {
 
           <EventBlock
             title="Blind Code"
-            time="09:00 AM – 05:00 PM"
+            time="12:00 PM – 02:00 PM"
             short="Logic-first coding challenge"
             long="Solve algorithmic problems without seeing test cases. Team size: Individual."
             prize="5k+ Prize Pool"
@@ -34,7 +34,7 @@ export function TimelineDemo() {
 
           <EventBlock
             title="Code Phantom"
-            time="09:00 AM – 05:00 PM"
+            time="10:00 AM – 12:00 PM"
             short="DSA competition"
             long="Efficiency-driven coding and deep problem-solving rounds.Team size: Individual."
             prize="5k+ Prize Pool"

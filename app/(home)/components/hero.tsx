@@ -61,7 +61,7 @@ export default function Hero() {
         <Image src={"/LOGO.png"} alt="logo" height={80} width={800} priority />
 
         <div className={`${cinzel.className} text-xl md:text-2xl text-yellow-300 tracking-[0.1em] font-bold uppercase`}>
-          27-28th March
+          10th APRIL
         </div>
 
         {/* Countdown */}
