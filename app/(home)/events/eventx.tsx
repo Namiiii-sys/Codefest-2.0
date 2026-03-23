@@ -8,37 +8,15 @@ import { Timeline } from "@/components/ui/timeline";
 export function TimelineDemo() {
   const data = [
     {
-      title: "DAY - 1",
+      title: "Comps",
       content: (
         <div className="space-y-8">
-
-          <EventBlock
-            title="Web Auction"
-            time="10:00 AM – 10:45 AM"
-            short="Live bidding for tech resources"
-            long={
-              <>
-                Teams strategically bid for tools, APIs, and constraints before development begins.
-                {" "}The event will take place in two parts{" "}
-                <span className="font-bold text-yellow-400">
-                  Auction Phase
-                </span>{" "}
-                and{" "}
-                <span className="font-bold text-yellow-400">
-                  Build Phase
-                </span>.
-                Team size: 2-4.
-              </>
-            }
-            prize="5k+ Prize Pool"
-            link="https://unstop.com/hackathons/web-auction-cbs-codefest-20-shaheed-sukhdev-college-of-business-studies-sscbs-du-delhi-1645678"
-          />
 
 
 
           <EventBlock
             title="Design Apocalypse"
-            time="01:00 PM – 02:30 PM"
+            time="09:00 AM – 05:00 PM"
             short="Time-bound UI/UX sprint"
             long="Rapid design challenge focused on usability, creativity, and execution. Team size: 2-4."
             prize="5k+ Prize Pool"
@@ -47,7 +25,7 @@ export function TimelineDemo() {
 
           <EventBlock
             title="Blind Code"
-            time="02:45 PM – 04:15 PM"
+            time="09:00 AM – 05:00 PM"
             short="Logic-first coding challenge"
             long="Solve algorithmic problems without seeing test cases. Team size: Individual."
             prize="5k+ Prize Pool"
@@ -56,7 +34,7 @@ export function TimelineDemo() {
 
           <EventBlock
             title="Code Phantom"
-            time="04:30 PM – 06:00 PM"
+            time="09:00 AM – 05:00 PM"
             short="DSA competition"
             long="Efficiency-driven coding and deep problem-solving rounds.Team size: Individual."
             prize="5k+ Prize Pool"
@@ -66,7 +44,7 @@ export function TimelineDemo() {
       ),
     },
     {
-      title: "DAY - 2",
+      title: "Hackathon",
       content: (
         <div className="space-y-8">
 
@@ -84,7 +62,7 @@ export function TimelineDemo() {
               </h4>
 
               <p className="text-yellow-400/80 font-semibold mt-3 text-lg">
-                09:30 AM — 09:00 PM
+                09:00 AM — 07:00 PM
               </p>
 
               <p className="mt-6 text-white font-medium text-lg max-w-2xl leading-relaxed">
