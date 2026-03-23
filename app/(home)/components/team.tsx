@@ -17,7 +17,7 @@ type TeamMember = {
 
 const team: TeamMember[] = [
   { name: "Namita Mehra", role: "Lead Organiser", image: "/namita.jpg", linkedin: "https://www.linkedin.com/in/namita-mh/", objectPosition: "0% 70%", scale: 1.1 },
-  { name: "Shubhangi Maurya", role: "Lead Organiser", image: "/shubhangi.jpg", linkedin: "https://www.linkedin.com/in/acm-sscbs?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+  { name: "Shubhangi Maurya", role: "Lead Organiser", image: "/shubhangi.jpg", linkedin: "https://in.linkedin.com/in/shubhangi-maurya-50ba36397" },
   { name: "Shambhavi Sharma", role: "Organiser", image: "/shambhavi.jpg", linkedin: "https://www.linkedin.com/in/shambhavi-sharma-822567328/" }, 
   { name: "Ishika Mandhar", role: "Organiser", image: "/ishika.jpg", linkedin: "https://www.linkedin.com/in/ishika386/" },
   { name: "Yajjat Ailawadi", role: "Organiser", image: "/Yajjat.jpg", linkedin: "https://www.linkedin.com/in/yajjat-ailawadi-b7790939b" },
