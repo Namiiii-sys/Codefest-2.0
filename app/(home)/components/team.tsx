@@ -24,7 +24,7 @@ const team: TeamMember[] = [
   { name: "Ronak Choudhary", role: "Organiser", image: "/ronak.jpg", linkedin: "https://www.linkedin.com/in/ronak-choudhary-bb855b327/" },
   { name: "Disha Verma", role: "Organiser", image: "/disha.jpg", linkedin: "https://www.linkedin.com/in/disha-v-7696002a0/" },
   { name: "Aniket Anand", role: "Organiser", image: "/aniket.png", linkedin: "https://www.linkedin.com/in/anand-aniket11/" },
-  { name: "Organising Committee Member", role: "Organiser", image: "/ocs.jpg", linkedin: "#" },
+  { name: "Organising Committee Member", role: "Organiser", image: "/ocs.jpg", linkedin: "https://www.linkedin.com/in/acm-sscbs/" },
 ];
 
 function TeamBubble({ member }: { member: TeamMember }) {
