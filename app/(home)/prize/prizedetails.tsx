@@ -14,7 +14,7 @@ type Prize = {
 const mainPrizes: Prize[] = [
   {
     title: "FIRST PLACE",
-    amount: "₹50,000",
+    amount: "₹12,000",
     subtitle: "National Hackathon Winner",
     desc: "",
     iconSrc: "/first.png",
@@ -22,7 +22,7 @@ const mainPrizes: Prize[] = [
   },
   {
     title: "SECOND PLACE",
-    amount: "₹30,000",
+    amount: "₹8,000",
     subtitle: "First Runner-up",
     desc: "",
     iconSrc: "/second.png",
@@ -30,7 +30,7 @@ const mainPrizes: Prize[] = [
   },
   {
     title: "THIRD PLACE",
-    amount: "₹20,000",
+    amount: "₹5,000",
     subtitle: "Second Runner-up",
     desc: "",
     iconSrc: "/third.png",
@@ -43,7 +43,7 @@ const eventPrizes: Prize[] = [
     title: "1st Prize",
     amount: "₹3,000",
     subtitle: "Per event",
-    desc: "Web Auction • Design Apocalypse • Blind Code • Code Phantom",
+    desc: "Design Apocalypse • Blind Code • Code Phantom",
     iconSrc: "/first.png",
     iconAlt: "Event first",
   },
@@ -51,7 +51,7 @@ const eventPrizes: Prize[] = [
     title: "2nd Prize",
     amount: "₹1,500",
     subtitle: "Per event",
-    desc: "Web Auction • Design Apocalypse • Blind Code • Code Phantom",
+    desc: "Design Apocalypse • Blind Code • Code Phantom",
     iconSrc: "/second.png",
     iconAlt: "Event second",
   },
@@ -59,7 +59,7 @@ const eventPrizes: Prize[] = [
     title: "3rd Prize",
     amount: "₹500",
     subtitle: "Per event",
-    desc: "Web Auction • Design Apocalypse • Blind Code • Code Phantom",
+    desc: "Design Apocalypse • Blind Code • Code Phantom",
     iconSrc: "/third.png",
     iconAlt: "Event third",
   },
