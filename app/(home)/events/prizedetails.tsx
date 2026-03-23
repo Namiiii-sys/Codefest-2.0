@@ -11,9 +11,9 @@ type PrizeItem = {
 ========================================= */
 
 const prizes: PrizeItem[] = [
-  { title: "First Place", prize: "₹50,000" },
-  { title: "Second Place", prize: "₹30,000" },
-  { title: "Third Place", prize: "₹20,000" },
+  { title: "First Place", prize: "₹12,000" },
+  { title: "Second Place", prize: "₹8,000" },
+  { title: "Third Place", prize: "₹5,000" },
 
 ];
 
