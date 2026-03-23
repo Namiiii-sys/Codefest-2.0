@@ -130,7 +130,7 @@ export default function SponsorsSection() {
           <p className="text-neutral-400 text-lg">
             Interested in sponsoring us?{" "}
             <a
-              href="/sponsorform"
+              href="https://forms.gle/ZceF5uAoX8bjXrBt9"
               className="text-yellow-500 font-bold hover:underline transition-all"
             >
               Get in touch
