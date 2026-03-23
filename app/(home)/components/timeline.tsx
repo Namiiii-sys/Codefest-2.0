@@ -77,7 +77,7 @@ const day2: Item[] = [
   {
     title: "Hackathon Kick-off",
     date: "DAY 2: 28th March",
-    time: "09:30 AM – 07:00 PM ",
+    time: "09:00 AM – 07:00 PM ",
     short: "Official start",
     long: "Problem statements revealed and development begins.",
     link: "https://unstop.com/college-fests/cbs-codefest-20-acm-sscbs-442766",
