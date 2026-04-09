@@ -123,7 +123,7 @@ export default function SponsorsSection() {
       size: "normal",
       sponsors: [
         { src: "/sponsors/evepaper.png", alt: "EvePaper", link: "" },
-        { src: "/sponsors/consolation.png", alt: "Consolation", link: "" },
+        { src: "/sponsors/consolation.jpeg", alt: "Consolation", link: "" },
         { src: "/sponsors/qodeml.png", alt: "QodeMl", link: "" }
       ],
     },

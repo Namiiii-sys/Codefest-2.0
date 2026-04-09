@@ -3,65 +3,83 @@
 import Image from "next/image";
 import { Linkedin } from "lucide-react";
 
+/* ------------------ Types ------------------ */
 type TeamMember = {
   name: string;
-  role: string;
   image: string;
   linkedin: string;
 };
 
-const team: TeamMember[] = [
+type Section = {
+  title: string;
+  members: TeamMember[];
+  size?: "large" | "normal";
+};
+
+/* ------------------ Data ------------------ */
+const teamSections: Section[] = [
   {
-    name: "Aniket Anand",
-    role: "Organiser",
-    image: "/aniket.png",
-    linkedin: "https://linkedin.com",
+    title: "Judges",
+    size: "normal",
+    members: [
+      {
+        name: "Vinit Vijal",
+        image: "/vinit.jpg",
+        linkedin: "https://www.linkedin.com/in/vinitvijal/",
+      },
+      {
+        name: "Muskan Goyal",
+        image: "/muskan.jpg",
+        linkedin: "https://www.linkedin.com/in/its-muskan-goyal/",
+      },
+    ],
   },
   {
-    name: "Dhruv Mukherjee",
-    role: "Organiser & Tech Lead",
-    image: "https://codefest-9eq.pages.dev/DPM.jpg",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Roshni Yadav",
-    role: "Organiser",
-    image: "/Roshni.jpg",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Industry Mentor",
-    role: "AI & ML Specialist",
-    image: "/mentor-placeholder.jpg",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Startup Advisor",
-    role: "Product & Strategy Mentor",
-    image: "/mentor-placeholder.jpg",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Technical Reviewer",
-    role: "Full Stack Architect",
-    image: "/mentor-placeholder.jpg",
-    linkedin: "https://linkedin.com",
+    title: "Mentors",
+    size: "large",
+    members: [
+      {
+        name: "Adarsh Chauhan",
+        image: "/adarsh.jpg",
+        linkedin: "https://www.linkedin.com/in/adarsh-chauhan-b87609225/",
+      },
+      {
+        name: "Rajan Jha",
+        image: "/Rajan.jpg",
+        linkedin: "https://www.linkedin.com/in/rajan-jha-4a921828a/",
+      },
+    ],
   },
 ];
 
-function TeamCard({ member }: { member: TeamMember }) {
+/* ------------------ Section Title ------------------ */
+const SectionTitle = ({ text }: { text: string }) => (
+  <h3 className="text-white font-semibold tracking-widest uppercase text-sm md:text-base mb-6 text-center">
+    {text}
+  </h3>
+);
+
+/* ------------------ Card ------------------ */
+function TeamCard({
+  member,
+  size = "normal",
+}: {
+  member: TeamMember;
+  size?: "large" | "normal";
+}) {
   return (
     <div
-      className="
+      className={`
         group flex flex-col overflow-hidden rounded-xl
         border border-white/10 hover:border-yellow-500
         bg-white/5 backdrop-blur-xl
         transition-all duration-300
-        max-w-[300px] w-full
-      "
+        w-full
+        ${size === "large" ? "max-w-[420px]" : "max-w-[340px]"}
+      `}
     >
       {/* Image */}
-      <div className="relative h-48 w-full">
+      <div className="relative w-full aspect-[4/5]">
         <Image
           src={member.image}
           alt={member.name}
@@ -71,58 +89,85 @@ function TeamCard({ member }: { member: TeamMember }) {
       </div>
 
       {/* Content */}
-      <div className="flex flex-col items-center text-center p-4 gap-1">
-        <h3 className="text-white text-base font-semibold">
+      <div className="flex flex-col items-center text-center p-4 gap-2">
+        <h3 className="text-white text-lg font-semibold">
           {member.name}
         </h3>
-
-        <p className="text-white/60 text-xs">
-          {member.role}
-        </p>
 
         <a
           href={member.linkedin}
           target="_blank"
           rel="noreferrer"
           className="
-            mt-2 inline-flex items-center justify-center
-            h-8 w-8 rounded-full
+            inline-flex items-center justify-center
+            h-9 w-9 rounded-full
             border border-white/20
             text-white hover:text-yellow-500
             hover:border-yellow-500
             transition-colors
           "
         >
-          <Linkedin size={16} />
+          <Linkedin size={18} />
         </a>
       </div>
     </div>
   );
 }
 
+/* ------------------ Main ------------------ */
 export default function Mentors() {
   return (
     <section className="bg-black py-20 px-6">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto flex flex-col gap-16">
 
-        {/* Heading */}
-        <div className="text-center mb-14">
+        {/* Main Heading */}
+        <div className="text-center">
           <h2 className="text-white text-4xl font-bold">
-            MENTORS
+            TEAM
           </h2>
           <p className="mt-3 text-white/70">
-            The people guiding CodeFest
+            The people behind CodeFest
           </p>
         </div>
 
-        {/* Centered Grid */}
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
-            {team.map((member, index) => (
-              <TeamCard key={index} member={member} />
-            ))}
-          </div>
-        </div>
+        {/* Sections */}
+        {teamSections.map((section, index) => {
+          const count = section.members.length;
+
+          const getGridClass = () => {
+            if (count === 1) return "grid-cols-1 max-w-sm";
+            if (count === 2) return "grid-cols-2 max-w-xl";
+            if (count === 3) return "grid-cols-3 max-w-4xl";
+
+            return "grid-cols-1 sm:grid-cols-2 md:grid-cols-3";
+          };
+
+          return (
+            <div key={index} className="flex flex-col items-center">
+
+              <SectionTitle text={section.title} />
+
+              <div
+                className={`
+                  grid
+                  gap-10
+                  place-items-center
+                  mx-auto
+                  ${getGridClass()}
+                `}
+              >
+                {section.members.map((member, i) => (
+                  <TeamCard
+                    key={i}
+                    member={member}
+                    size={section.size}
+                  />
+                ))}
+              </div>
+
+            </div>
+          );
+        })}
 
       </div>
     </section>
