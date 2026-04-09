@@ -30,7 +30,7 @@ export default function Home() {
       <Glimpses/>
       <SponsorsSection />
       <MeetTheTeam/>
-      {/* <Mentors/> */}
+      <Mentors/>
       <FAQ/>
     </main>
   );
