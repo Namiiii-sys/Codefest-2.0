@@ -20,7 +20,7 @@ const EmptyCard = ({
   src?: string;
   alt?: string;
   link?: string;
-  size?: "large" | "normal";
+  size?: string;
 }) => {
   // ✅ FIX: fluid width instead of fixed width
   const dimensions =
